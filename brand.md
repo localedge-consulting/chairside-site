@@ -9,7 +9,7 @@ The single reference for colors, type, voice, and assets. Everything
 - **Lockup:** "Chairside · Barber Sites" / wordmark "CHAIR**SIDE**" (SIDE in amber)
 - **Domain:** chairsidebarbersites.com (GoDaddy; GoDaddy-bundled M365 email)
 - **Mailbox:** hello@chairsidebarbersites.com (provision in GoDaddy M365)
-- **IG:** TBD — likely @chairsidebarbersites or @chairside.barbers (confirm on signup)
+- **IG:** @chairsidebarbersites (confirmed 2026-06-18)
 
 ## Palette (the "black & amber")
 | Role | Hex |
