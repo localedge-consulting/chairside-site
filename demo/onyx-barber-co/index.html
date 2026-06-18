@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Onyx Barber Co. — Sample Site by Local Edge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Onyx — stark monochrome, photography-forward. Inspired by the
+     premium B/W barber sites (Quan the Barber et al). Big condensed
+     type, full-bleed image zones, near-zero color. Gallery-led.
+     NOTE: image zones use sample/placeholder imagery — a real build
+     drops in the barber's own cut photos. */
+  :root{--bg:#0a0a0b;--bg-2:#121214;--panel:#161618;--paper:#f4f4f3;--muted:#8c8c90;--line:#262629;--steel:#c8ccd2}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;line-height:0.92;letter-spacing:0.01em}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+  /* film-grain overlay for the photographic feel */
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:0.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  header{position:sticky;top:0;z-index:50;background:rgba(10,10,11,0.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:0.08em;color:var(--paper)}
+  .call-btn{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.12em;color:var(--bg);background:var(--paper);text-decoration:none;padding:9px 22px;border-radius:1px}
+  /* HERO — full-bleed monochrome image zone with statement overlay */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;
+    background:
+      linear-gradient(180deg,rgba(10,10,11,0.2) 0%,rgba(10,10,11,0.55) 55%,rgba(10,10,11,0.96) 100%),
+      radial-gradient(120% 80% at 70% 25%,#3a3a40 0%,#1a1a1d 45%,#0a0a0b 80%);
+    padding:0 0 70px}
+  .hero-inner{position:relative;z-index:3;max-width:900px}
+  .eyebrow{font-family:'Inter',sans-serif;font-size:0.74rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--steel);margin-bottom:20px;font-weight:600}
+  .hero h1{font-size:clamp(4rem,17vw,9.5rem);color:var(--paper);text-transform:uppercase}
+  .hero h1 span{display:block}
+  .hero p{margin:26px 0 34px;font-size:1.18rem;max-width:42ch;color:var(--muted);font-weight:400}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:0.1em;text-decoration:none;padding:14px 34px;border-radius:1px;display:inline-block}
+  .btn-primary{background:var(--paper);color:var(--bg)}
+  .btn-ghost{border:1px solid var(--muted);color:var(--paper)}
+  section{padding:90px 0}
+  .sec-head{margin-bottom:46px}
+  .sec-head .eyebrow{margin-bottom:14px}
+  .sec-head h2{font-size:clamp(2.6rem,8vw,4.4rem);color:var(--paper);text-transform:uppercase}
+  /* BOOKING FRICTION band */
+  .friction{background:var(--paper);color:var(--bg);text-align:center;padding:72px 0}
+  .friction h2{font-size:clamp(2.4rem,8vw,4rem);color:var(--bg);max-width:16ch;margin:0 auto 8px}
+  .friction p{font-family:'Inter',sans-serif;font-size:1.06rem;color:#3a3a3e;max-width:40ch;margin:0 auto 28px;font-weight:500}
+  .friction .btn-primary{background:var(--bg);color:var(--paper)}
+  /* SERVICES */
+  .services{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:0}
+  .svc{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:24px 2px;border-bottom:1px solid var(--line)}
+  .svc:last-child{border-bottom:none}
+  .svc .n{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:0.03em;color:var(--paper)}
+  .svc .d{font-size:0.86rem;color:var(--muted);font-family:'Inter',sans-serif;letter-spacing:0}
+  .svc .p{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--steel);white-space:nowrap}
+  /* GALLERY — monochrome tiles standing in for real cut photos */
+  .gallery .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .tile{aspect-ratio:4/5;border:1px solid var(--line);position:relative;overflow:hidden}
+  .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.5))}
+  .g1{background:radial-gradient(80% 80% at 40% 30%,#4a4a50,#161618)}
+  .g2{background:radial-gradient(80% 80% at 60% 35%,#3d3d43,#101012)}
+  .g3{background:radial-gradient(90% 70% at 50% 25%,#55555c,#1a1a1d)}
+  .g4{background:radial-gradient(80% 80% at 35% 40%,#42424a,#0e0e10)}
+  .g5{background:radial-gradient(85% 75% at 55% 30%,#4f4f56,#151517)}
+  .g6{background:radial-gradient(80% 80% at 45% 35%,#393940,#0c0c0e)}
+  .gal-note{text-align:center;margin-top:18px;font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--muted);letter-spacing:0.04em}
+  /* ABOUT */
+  .about{max-width:780px;margin:0 auto;text-align:center}
+  .about .big{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,7vw,3.6rem);color:var(--paper);letter-spacing:0.02em;line-height:1.05;margin-bottom:20px;text-transform:uppercase}
+  .about p{color:var(--muted);font-size:1.06rem;line-height:1.7}
+  /* VISIT */
+  .visit{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  .info-card{background:var(--panel);border:1px solid var(--line);padding:32px}
+  .info-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.04em;color:var(--paper);margin-bottom:18px}
+  .info-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;font-size:0.95rem;border-bottom:1px solid var(--line)}
+  .info-row:last-child{border-bottom:none}
+  .info-row span:first-child{color:var(--muted)}
+  .info-row span:last-child{color:var(--paper);font-weight:500;text-align:right}
+  .final{text-align:center}
+  .final h2{font-size:clamp(3rem,10vw,5.5rem);color:var(--paper);margin-bottom:16px;text-transform:uppercase}
+  .final p{color:var(--muted);margin-bottom:30px}
+  footer{background:#000;color:var(--muted);padding:34px 0;text-align:center;font-size:0.84rem;border-top:1px solid var(--line)}
+  .tag-line{color:var(--steel);letter-spacing:0.14em;text-transform:uppercase;font-size:0.78rem;margin-bottom:8px}
+  .demo-tag{display:inline-block;margin-top:14px;font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.16em;color:var(--bg);background:var(--paper);padding:4px 14px}
+  @media(min-width:780px){.svc-grid{grid-template-columns:1fr 1fr;column-gap:54px}.gallery .gal-grid{grid-template-columns:repeat(3,1fr)}.visit-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header><div class="wrap bar"><div class="logo">ONYX BARBER CO.</div><a class="call-btn" href="#book">Book</a></div></header>
+
+<section class="hero"><div class="wrap hero-inner">
+  <div class="eyebrow">Precision Barbering &middot; Downtown</div>
+  <h1><span>The fade</span><span>speaks first.</span></h1>
+  <p>Skin fades, sharp lines, and beard work done with zero shortcuts. Walk in unsure. Walk out certain.</p>
+  <div class="cta-row"><a class="btn btn-primary" href="#book">Book a chair</a><a class="btn btn-ghost" href="#work">See the work</a></div>
+</div></section>
+
+<section class="friction"><div class="wrap">
+  <h2>No texting. No waiting. Just book.</h2>
+  <p>Pick a time, get an instant confirmation, and show up sharp. No "you around?", no back-and-forth.</p>
+  <a class="btn btn-primary" href="#book">Book online</a>
+</div></section>
+
+<section id="work" class="gallery"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">The work</div><h2>The portfolio</h2></div>
+  <div class="gal-grid">
+    <div class="tile g1"></div><div class="tile g2"></div><div class="tile g3"></div>
+    <div class="tile g4"></div><div class="tile g5"></div><div class="tile g6"></div>
+  </div>
+  <div class="gal-note">Every cut, on the wall. (Sample layout &mdash; a real build uses the barber&rsquo;s own photos.)</div>
+</div></section>
+
+<section id="services" class="services"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Price list</div><h2>The menu</h2></div>
+  <div class="svc-grid">
+    <div class="svc"><div><div class="n">Skin Fade</div><div class="d">Bald, taper, or drop.</div></div><div class="p">$45</div></div>
+    <div class="svc"><div><div class="n">Fade + Beard</div><div class="d">Full sculpt, lined sharp.</div></div><div class="p">$60</div></div>
+    <div class="svc"><div><div class="n">Beard &amp; Hot Towel</div><div class="d">Shaped, oiled, finished.</div></div><div class="p">$35</div></div>
+    <div class="svc"><div><div class="n">Hair Design</div><div class="d">Lines, parts, custom.</div></div><div class="p">$55</div></div>
+    <div class="svc"><div><div class="n">Lineup</div><div class="d">Edge-up between cuts.</div></div><div class="p">$25</div></div>
+    <div class="svc"><div><div class="n">The Onyx</div><div class="d">Cut, beard, hot towel, the works.</div></div><div class="p">$80</div></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <div class="eyebrow" style="text-align:center;margin-bottom:16px">The barber</div>
+  <div class="big">Five years.<br>Ten thousand cuts.<br>Zero shortcuts.</div>
+  <p>Onyx is built on one rule: the cut is the statement. Every fade gets the same focus, whether it&rsquo;s your first visit or your fiftieth. No rushing the chair, no phoning it in.</p>
+</div></section>
+
+<section id="book" class="visit"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Plan your visit</div><h2>Find the chair</h2></div>
+  <div class="visit-grid">
+    <div class="info-card"><h3>The shop</h3>
+      <div class="info-row"><span>Address</span><span>14 Foundry St, Unit 2</span></div>
+      <div class="info-row"><span>Booking</span><span>Online only</span></div>
+      <div class="info-row"><span>Phone</span><span>(555) 901-3300</span></div>
+      <div class="info-row"><span>Tag us</span><span>@onyxcuts</span></div>
+      <div style="margin-top:22px"><a class="btn btn-primary" style="width:100%;text-align:center;display:flex;align-items:center;justify-content:center" href="#book">Book a chair</a></div>
+    </div>
+    <div class="info-card"><h3>Hours</h3>
+      <div class="info-row"><span>Tue &ndash; Fri</span><span>10am &ndash; 8pm</span></div>
+      <div class="info-row"><span>Saturday</span><span>9am &ndash; 6pm</span></div>
+      <div class="info-row"><span>Sun &ndash; Mon</span><span>Closed</span></div>
+      <div class="info-row"><span>Walk-ins</span><span>Book online to be safe</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Book the chair.</h2>
+  <p>Pick a time. Show up. Walk out certain.</p>
+  <a class="btn btn-primary" href="#book">Book a chair</a>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="tag-line">Onyx Barber Co. &middot; 14 Foundry St &middot; Downtown</div>
+  <span class="demo-tag">Sample site &middot; built by Chairside</span>
+</div></footer>
+</body>
+</html>

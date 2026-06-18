@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chairside — Websites for Barbers</title>
+<meta name="description" content="On Instagram every barber's fades look the same. Your website is where a stranger decides you're their barber. Real sites for barbershops, built from a real conversation.">
+<meta property="og:title" content="Chairside — Websites for Barbers">
+<meta property="og:description" content="On Instagram every barber's fades look the same. Your website is where a stranger decides you're THEIR barber.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.chairsidebarbersites.com/">
+<meta property="og:image" content="https://www.chairsidebarbersites.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Chairside Barber Sites",
+  "description": "Websites for barbershops, built from a personality session so the site sounds like the barber — not a template.",
+  "url": "https://www.chairsidebarbersites.com/",
+  "email": "hello@chairsidebarbersites.com",
+  "areaServed": "United States",
+  "serviceType": "Website design for barbers"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Chairside — black + amber. brand.md is source of truth. */
+  :root{
+    --bg:#15140f;--bg-soft:#1d1b14;--panel:#211e16;
+    --paper:#f3ece0;--amber:#d9a441;--amber-bright:#edbc5c;
+    --muted:#9a9078;--rule:#332e23;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Oswald',Impact,sans-serif;font-weight:600;line-height:1.04;letter-spacing:0;text-transform:uppercase}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  a{color:inherit}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(21,20,15,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;letter-spacing:0.06em;color:var(--paper)}
+  .logo b{color:var(--amber);font-weight:400}
+  .nav-cta{font-family:'Oswald',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--bg);background:var(--amber);text-decoration:none;padding:10px 18px;border-radius:2px;transition:.2s}
+  .nav-cta:hover{background:var(--amber-bright)}
+
+  .hero{position:relative;padding:104px 0 92px;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-140px;top:40%;transform:translateY(-50%);width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(217,164,65,0.14),transparent 62%);pointer-events:none}
+  .hero-inner{position:relative;z-index:2;max-width:780px}
+  .kicker{font-family:'Oswald',sans-serif;font-size:0.82rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.8rem,8vw,4.6rem);color:var(--paper)}
+  .hero h1 .a{color:var(--amber)}
+  .hero p{margin:28px 0 38px;font-size:1.18rem;max-width:52ch;color:var(--muted);font-weight:400;line-height:1.6}
+  .hero p em{color:var(--paper);font-style:italic}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{font-family:'Oswald',sans-serif;font-size:0.84rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:15px 30px;border-radius:2px;transition:.2s;display:inline-block}
+  .btn-primary{background:var(--amber);color:var(--bg)}
+  .btn-primary:hover{background:var(--amber-bright)}
+  .btn-ghost{border:1.5px solid var(--muted);color:var(--paper)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+  section{padding:80px 0}
+  .sec-k{font-family:'Oswald',sans-serif;font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:16px}
+  h2{font-size:clamp(2rem,6vw,2.9rem);color:var(--paper)}
+  h2 .a{color:var(--amber)}
+  .lead{margin-top:20px;font-size:1.1rem;color:var(--muted);max-width:60ch;line-height:1.7}
+  .lead strong{color:var(--paper);font-weight:600}
+  .lead em{color:var(--paper);font-style:italic}
+
+  .soft{background:var(--bg-soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .stack > div{margin-top:22px}
+
+  .grid2{display:grid;grid-template-columns:1fr;gap:28px;margin-top:40px}
+  .feat h3{font-family:'Oswald',sans-serif;font-size:1.15rem;color:var(--amber);font-weight:600;letter-spacing:0.01em}
+  .feat p{margin-top:6px;color:var(--muted);font-size:0.98rem;line-height:1.6}
+
+  .demos{display:grid;grid-template-columns:1fr;gap:14px;margin-top:40px}
+  .demo{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--amber);border-radius:3px;padding:20px 22px;text-decoration:none;transition:.2s}
+  .demo:hover{transform:translateX(3px);border-left-color:var(--amber-bright)}
+  .demo .n{font-family:'Oswald',sans-serif;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.01em;color:var(--paper)}
+  .demo .v{font-size:0.86rem;color:var(--muted);margin-top:2px}
+  .demo .arw{color:var(--amber);font-size:1.3rem}
+
+  .paths{display:grid;grid-template-columns:1fr;gap:24px;margin-top:40px}
+  .path{background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:30px}
+  .path h3{font-family:'Oswald',sans-serif;font-size:1.4rem;color:var(--paper);margin-bottom:12px}
+  .path p{color:var(--muted);font-size:0.98rem;line-height:1.65}
+  .price-note{margin-top:30px;font-style:italic;color:var(--muted);font-size:0.95rem;font-family:'Inter',sans-serif}
+
+  .steps{margin-top:44px;display:flex;flex-direction:column;gap:30px}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start}
+  .step .num{font-family:'Oswald',sans-serif;font-size:2.4rem;color:var(--amber);opacity:0.7;line-height:1}
+  .step h3{font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--paper)}
+  .step p{margin-top:6px;color:var(--muted);font-size:0.98rem;line-height:1.6}
+
+  .obj{margin-top:40px;display:flex;flex-direction:column;gap:26px}
+  .obj dt{font-family:'Oswald',sans-serif;font-size:1.05rem;color:var(--amber);letter-spacing:0.01em}
+  .obj dd{margin-top:6px;color:var(--muted);font-size:0.98rem;line-height:1.65}
+
+  .final{text-align:center}
+  .final h2{font-size:clamp(2.2rem,7vw,3.4rem)}
+  .final p{margin:18px auto 32px;color:var(--muted);max-width:54ch}
+  .cta-center{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+  footer{background:#100f0b;color:var(--muted);padding:34px 0;border-top:1px solid var(--rule);font-size:0.88rem}
+  .foot{display:flex;flex-direction:column;gap:14px}
+  .foot a{color:var(--amber);text-decoration:none}
+  .foot .logo{font-size:1.3rem}
+
+  @media(min-width:780px){
+    .grid2{grid-template-columns:1fr 1fr;gap:36px 44px}
+    .demos{grid-template-columns:1fr 1fr}
+    .paths{grid-template-columns:1fr 1fr}
+    .foot{flex-direction:row;align-items:center;justify-content:space-between}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="logo">CHAIR<b>SIDE</b></div>
+    <a class="nav-cta" href="mailto:hello@chairsidebarbersites.com?subject=Website%20for%20my%20barbershop">Get in touch</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="kicker">Websites for barbers</div>
+    <h1>Every barber&rsquo;s fades look the <span class="a">same</span> online.</h1>
+    <p>On Instagram it&rsquo;s a grid of clean fades &mdash; yours and everyone else&rsquo;s. So when someone&rsquo;s hunting for a new barber, the real question isn&rsquo;t &ldquo;can they cut?&rdquo; It&rsquo;s <em>&ldquo;will I actually enjoy this chair?&rdquo;</em> Your website is where they decide you&rsquo;re <em>their</em> barber.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:hello@chairsidebarbersites.com?subject=Website%20for%20my%20barbershop&body=Hey%2C%20I%20run%20a%20barbershop%20and%20I%27m%20interested%20in%20a%20real%20website.%0A%0AShop%20name%3A%20%0ACity%3A%20%0AWhere%20people%20find%20me%20now%3A%20">Get my shop a site</a>
+      <a class="btn btn-ghost" href="#work">See the work</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <div class="sec-k">The problem</div>
+    <h2>A booking link isn&rsquo;t a <span class="a">front door.</span></h2>
+    <div>
+      <p class="lead">Most barbers live on a Booksy link and an Instagram grid. Great for the regulars who already know you. But the stranger who just got told &ldquo;you gotta check out my barber&rdquo; pulls out their phone, Googles you, and lands on a booking page that could belong to anybody.</p>
+    </div>
+    <div>
+      <p class="lead">And the part nobody mentions: <strong>AI tools can&rsquo;t read your Instagram.</strong> When someone asks ChatGPT or Google&rsquo;s AI for &ldquo;a good barber near me,&rdquo; your IG is invisible to it. A real website is the one thing those tools can actually see and recommend.</p>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap stack">
+    <div class="sec-k">How I work</div>
+    <h2>I don&rsquo;t send you a form. <span class="a">We talk first.</span></h2>
+    <div>
+      <p class="lead">Every site starts with a real conversation &mdash; about an hour. I get a feel for you, your shop, how you talk to your guys, what makes your chair different from the one down the street.</p>
+    </div>
+    <div>
+      <p class="lead">Then I build a site that actually sounds like <em>you</em> &mdash; not a template with your name dropped in. The cut is the same everywhere; the website has to carry the personality. A form can&rsquo;t capture that. A conversation can.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-k">What you get</div>
+    <h2>A real <span class="a">home</span> for your shop.</h2>
+    <div class="grid2">
+      <div class="feat"><h3>A real homepage</h3><p>Your menu, hours, story, tap-to-call, and a book button straight to Booksy / GlossGenius / whatever you already use.</p></div>
+      <div class="feat"><h3>Built to sound like you</h3><p>The voice and vibe from our conversation, on the page &mdash; the thing that tells a stranger they&rsquo;ll enjoy your chair.</p></div>
+      <div class="feat"><h3>Fast on a phone</h3><p>Mobile-first, loads in under a second. That&rsquo;s where every new client looks you up.</p></div>
+      <div class="feat"><h3>Readable by AI search</h3><p>Structured so ChatGPT, Perplexity, and Google&rsquo;s AI can read and recommend you &mdash; the thing your Instagram can&rsquo;t do.</p></div>
+      <div class="feat"><h3>Your own domain</h3><p>yourshop.com &mdash; not a booking-platform URL no one can remember or type.</p></div>
+      <div class="feat"><h3>Yours to keep</h3><p>You own what I build. No lock-in. Take it anywhere, anytime.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="soft">
+  <div class="wrap">
+    <div class="sec-k">See the work</div>
+    <h2>Six shops, six <span class="a">personalities.</span></h2>
+    <p class="lead">Sample sites built to show the range. Same idea, six different feels &mdash; tap one and picture your shop.</p>
+    <div class="demos">
+      <a class="demo" href="/demo/driftwood-barber/" target="_blank" rel="noopener"><div><div class="n">Driftwood Barber Co.</div><div class="v">Coastal, old-school</div></div><span class="arw">&rarr;</span></a>
+      <a class="demo" href="/demo/onyx-barber-co/" target="_blank" rel="noopener"><div><div class="n">Onyx Barber Co.</div><div class="v">Stark, photo-forward</div></div><span class="arw">&rarr;</span></a>
+      <a class="demo" href="/demo/crown-barber-co/" target="_blank" rel="noopener"><div><div class="n">Crown Barber Co.</div><div class="v">Legacy, neighborhood institution</div></div><span class="arw">&rarr;</span></a>
+      <a class="demo" href="/demo/apex-fade-studio/" target="_blank" rel="noopener"><div><div class="n">Apex Fade Studio</div><div class="v">Modern, precision</div></div><span class="arw">&rarr;</span></a>
+      <a class="demo" href="/demo/marlowes-barber-room/" target="_blank" rel="noopener"><div><div class="n">Marlowe&rsquo;s Barber Room</div><div class="v">One chair, by appointment</div></div><span class="arw">&rarr;</span></a>
+      <a class="demo" href="/demo/gentry-grooming-co/" target="_blank" rel="noopener"><div><div class="n">Gentry Grooming Co.</div><div class="v">Upscale grooming lounge</div></div><span class="arw">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-k">After I build it</div>
+    <h2>Two ways to <span class="a">run it.</span></h2>
+    <div class="paths">
+      <div class="path"><h3>I keep tending it</h3><p>I host it, keep it running, and make the small changes you ask for &mdash; new hours, new prices, a new service. You never touch the technical side. A small monthly fee.</p></div>
+      <div class="path"><h3>I teach you to run it</h3><p>One sixty-minute screen share and you update your own site using AI &mdash; hours, prices, a photo, whatever. You own the whole thing and never see a monthly bill from me.</p></div>
+    </div>
+    <p class="price-note">Pricing for both paths sent on request &mdash; just ask.</p>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="sec-k">How it works</div>
+    <h2>From <span class="a">chair</span> to site.</h2>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><div><h3>The sit-down</h3><p>About an hour. I get a real feel for you and the shop &mdash; the stuff a form would never catch.</p></div></div>
+      <div class="step"><span class="num">02</span><div><h3>I build it</h3><p>A real site that sounds like you, with your menu, your booking, your voice. Usually about a week.</p></div></div>
+      <div class="step"><span class="num">03</span><div><h3>Review &amp; run</h3><p>You see the real thing before you owe anything. If it&rsquo;s off, I fix it. Then you pick how to run it.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-k">Straight talk</div>
+    <h2>What you&rsquo;re probably <span class="a">thinking.</span></h2>
+    <dl class="obj">
+      <div><dt>&ldquo;I already have Booksy.&rdquo;</dt><dd>Keep it. Your book button routes right to it. Booksy handles appointments; a website handles everything Booksy can&rsquo;t &mdash; representing you to someone who doesn&rsquo;t know you yet.</dd></div>
+      <div><dt>&ldquo;I&rsquo;m not techy.&rdquo;</dt><dd>That&rsquo;s the point of the sit-down. You talk, I build. And if you ever want to run it yourself, the lesson is built for someone who&rsquo;s never touched a website.</dd></div>
+      <div><dt>&ldquo;What if I don&rsquo;t like it?&rdquo;</dt><dd>You see the real site before you owe anything. If something&rsquo;s off, I fix it. You only pay if you want to keep it.</dd></div>
+      <div><dt>&ldquo;Am I locked in?&rdquo;</dt><dd>No. You own what I build. Cancel hosting anytime, or learn to run it yourself and pay me nothing monthly.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="final soft">
+  <div class="wrap">
+    <h2>Want to see what your shop could <span class="a">look like?</span></h2>
+    <p>Send me your shop &mdash; Instagram or Booksy link is fine &mdash; and I&rsquo;ll send back one specific thing I&rsquo;d change to get you more new clients. Free. No pitch unless you ask for one.</p>
+    <div class="cta-center">
+      <a class="btn btn-primary" href="mailto:hello@chairsidebarbersites.com?subject=My%20barbershop&body=Here%27s%20my%20shop%20(IG%20or%20Booksy%20link)%3A%20">Get my free fix</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo">CHAIR<b>SIDE</b></div>
+    <div>Websites for barbers &middot; <a href="mailto:hello@chairsidebarbersites.com">hello@chairsidebarbersites.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

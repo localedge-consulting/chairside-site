@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Marlowe's Barber Room — Sample Site by Local Edge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Marlowe's — warm bone + espresso + oxblood. Leather-and-old-wood
+     barbershop palette: confident, gender-neutral, characterful. */
+  :root{--paper:#f1e8d9;--paper-soft:#e7dac4;--ink:#2a201a;--ox:#883a43;--ox-deep:#6d2b33;--muted:#8a7a69;--rule:#dccdb4}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.04;letter-spacing:0}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+  header{position:sticky;top:0;z-index:50;background:rgba(241,232,217,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--ink)}
+  .logo em{font-style:italic;color:var(--ox)}
+  .call-btn{font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--paper);background:var(--ox);text-decoration:none;padding:11px 22px;border-radius:2px;font-family:'Inter',sans-serif}
+  .hero{position:relative;padding:114px 0 100px;background:radial-gradient(circle at 78% 18%,rgba(136,58,67,0.12),transparent 56%)}
+  .hero-inner{max-width:800px}
+  .eyebrow{font-size:0.8rem;letter-spacing:0.36em;text-transform:uppercase;color:var(--ox);margin-bottom:24px;font-weight:600}
+  .hero h1{font-size:clamp(3.2rem,10vw,6rem);color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--ox)}
+  .hero p{margin:28px 0 38px;font-size:1.16rem;max-width:46ch;color:var(--ink);font-weight:400}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:16px 32px;border-radius:2px;display:inline-block}
+  .btn-primary{background:var(--ox);color:var(--paper)}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+  .note{display:flex;align-items:center;gap:12px;margin-top:34px;color:var(--muted);font-size:0.94rem}
+  .note strong{color:var(--ox);font-weight:600}
+  section{padding:88px 0}
+  .sec-head{margin-bottom:46px}
+  .sec-head .eyebrow{margin-bottom:14px}
+  .sec-head h2{font-size:clamp(2.2rem,6vw,3.2rem);color:var(--ink)}
+  .sec-head h2 em{font-style:italic;color:var(--ox)}
+  .services{background:var(--paper-soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:0}
+  .svc{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:24px 4px;border-bottom:1px solid var(--rule)}
+  .svc:last-child{border-bottom:none}
+  .svc .n{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--ink)}
+  .svc .d{font-size:0.88rem;color:var(--muted);margin-top:2px;font-family:'Inter',sans-serif}
+  .svc .p{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--ox);white-space:nowrap}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
+  .about-stat{border:1px solid var(--rule);background:var(--paper-soft);border-radius:3px;padding:36px}
+  .about-stat .big{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--ox);line-height:1}
+  .about-stat .lbl{font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:10px;font-weight:600}
+  .about-copy h2{font-size:2.2rem;color:var(--ink);margin-bottom:18px}
+  .about-copy h2 em{font-style:italic;color:var(--ox)}
+  .about-copy p{color:var(--ink);font-size:1.06rem;line-height:1.7;margin-bottom:16px}
+  .visit{background:var(--paper-soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  .info-card{background:var(--paper);border-radius:3px;padding:32px;border:1px solid var(--rule)}
+  .info-card h3{font-size:1.4rem;color:var(--ox);margin-bottom:20px}
+  .info-row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;font-size:0.95rem;border-bottom:1px solid var(--rule)}
+  .info-row:last-child{border-bottom:none}
+  .info-row span:first-child{color:var(--muted)}
+  .info-row span:last-child{color:var(--ink);font-weight:500;text-align:right}
+  .final{text-align:center}
+  .final h2{font-size:clamp(2.4rem,8vw,3.8rem);color:var(--ink);margin-bottom:16px}
+  .final h2 em{font-style:italic;color:var(--ox)}
+  .final p{color:var(--muted);margin-bottom:30px}
+  footer{background:var(--ink);color:#cdbfa9;padding:32px 0;text-align:center;font-size:0.84rem;border-top:1px solid var(--rule)}
+  .demo-tag{display:inline-block;margin-top:14px;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--paper);background:var(--ox);padding:5px 12px;border-radius:2px;font-weight:600;font-family:'Inter',sans-serif}
+  @media(min-width:780px){.svc-grid{grid-template-columns:1fr 1fr;column-gap:54px}.about-grid{grid-template-columns:0.6fr 1.4fr;gap:52px}.visit-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar"><div class="logo">Marlowe&rsquo;s <em>Barber Room</em></div><a class="call-btn" href="#book">Book</a></div></header>
+
+<section class="hero"><div class="wrap hero-inner">
+  <div class="eyebrow">By Appointment &middot; All Heads Welcome</div>
+  <h1>A barber&rsquo;s hands. <em>A better chair.</em></h1>
+  <p>Precision cuts, fades, and beard work in a room that actually feels good to sit in. Run by one barber who takes her time.</p>
+  <div class="cta-row"><a class="btn btn-primary" href="#book">Book an appointment</a><a class="btn btn-ghost" href="#services">See services</a></div>
+  <div class="note"><strong>One chair.</strong> No rotation, no rush, no being passed off.</div>
+</div></section>
+
+<section id="services" class="services"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">The menu</div><h2>What I <em>offer</em></h2></div>
+  <div class="svc-grid">
+    <div class="svc"><div><div class="n">Haircut</div><div class="d">Clipper or scissor, your way.</div></div><div class="p">$45</div></div>
+    <div class="svc"><div><div class="n">Cut + Beard</div><div class="d">Full reset, unhurried.</div></div><div class="p">$60</div></div>
+    <div class="svc"><div><div class="n">Skin Fade</div><div class="d">Clean, blended, exact.</div></div><div class="p">$50</div></div>
+    <div class="svc"><div><div class="n">Beard Trim</div><div class="d">Shaped and detailed.</div></div><div class="p">$30</div></div>
+    <div class="svc"><div><div class="n">Kids&rsquo; Cut</div><div class="d">Patient with the little ones.</div></div><div class="p">$30</div></div>
+    <div class="svc"><div><div class="n">First Visit</div><div class="d">A little extra time to get it right.</div></div><div class="p">$50</div></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about-grid">
+  <div class="about-stat">
+    <div class="big">1 chair</div>
+    <div class="lbl">One barber, your full hour</div>
+    <hr style="border:none;border-top:1px solid var(--rule);margin:26px 0">
+    <div class="big" style="font-size:1.8rem">By appt.</div>
+    <div class="lbl">No waiting room rush</div>
+  </div>
+  <div class="about-copy">
+    <h2>Take a seat. <em>Take your time.</em></h2>
+    <p>Marlowe&rsquo;s is a one-chair room because the cut deserves it. You book a time, you get the whole hour, and you leave with exactly what you asked for &mdash; not what the line allowed.</p>
+    <p>Everybody&rsquo;s welcome in this chair. The fade&rsquo;s the same whether it&rsquo;s your first or your fiftieth.</p>
+  </div>
+</div></section>
+
+<section id="book" class="visit"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Plan your visit</div><h2>Find the <em>room</em></h2></div>
+  <div class="visit-grid">
+    <div class="info-card"><h3>The room</h3>
+      <div class="info-row"><span>Address</span><span>27 Birch Lane, Studio 4</span></div>
+      <div class="info-row"><span>Booking</span><span>Appointment only</span></div>
+      <div class="info-row"><span>Phone</span><span>(555) 274-6610</span></div>
+      <div class="info-row"><span>Instagram</span><span>@marlowescuts</span></div>
+    </div>
+    <div class="info-card"><h3>Hours</h3>
+      <div class="info-row"><span>Wed &ndash; Fri</span><span>10am &ndash; 7pm</span></div>
+      <div class="info-row"><span>Saturday</span><span>9am &ndash; 5pm</span></div>
+      <div class="info-row"><span>Sun &ndash; Tue</span><span>Closed</span></div>
+      <div class="info-row"><span>Late nights</span><span>By request</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Book the <em>chair.</em></h2>
+  <p>Pick your time. The whole hour is yours.</p>
+  <a class="btn btn-primary" href="#book">Book an appointment</a>
+</div></section>
+
+<footer><div class="wrap">Marlowe&rsquo;s Barber Room &middot; 27 Birch Lane &middot; By appointment<br><span class="demo-tag">Sample site &middot; built by Chairside</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Driftwood Barber Co. — Sample Site by Local Edge</title>
+<meta name="description" content="A sample barbershop website built by Chairside to show what a real homepage looks like. Driftwood Barber Co. is a fictional shop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Driftwood Barber Co. — DEMO. Dark + amber barbershop palette
+     (the Mochopz recipe). Type-led design, no stock photos — carried
+     by Oswald display + an amber accent system + subtle texture. */
+  :root{
+    --bg:#15140f;
+    --bg-soft:#1d1b14;
+    --panel:#211e16;
+    --paper:#f3ece0;
+    --amber:#d9a441;
+    --amber-bright:#edbc5c;
+    --muted:#9a9078;
+    --rule:#332e23;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--paper);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Oswald',Impact,sans-serif;font-weight:600;line-height:1.02;letter-spacing:0.01em;text-transform:uppercase}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+
+  /* faint diagonal texture so flat dark areas read intentional */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:0.5;
+    background:repeating-linear-gradient(135deg,rgba(255,255,255,0.012) 0 2px,transparent 2px 7px);z-index:0}
+  body>*{position:relative;z-index:1}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(21,20,15,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Oswald',Impact,sans-serif;font-weight:700;font-size:1.4rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--paper)}
+  .logo em{font-style:normal;color:var(--amber)}
+  .call-btn{font-family:'Oswald',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--bg);background:var(--amber);text-decoration:none;padding:11px 20px;border-radius:2px;transition:.2s}
+  .call-btn:hover{background:var(--amber-bright)}
+
+  .hero{position:relative;padding:120px 0 110px;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(217,164,65,0.16),transparent 62%);pointer-events:none}
+  .hero-inner{position:relative;max-width:820px}
+  .eyebrow{font-family:'Oswald',sans-serif;font-size:0.82rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--amber);margin-bottom:26px;font-weight:500}
+  .hero h1{font-size:clamp(3.4rem,12vw,6.4rem);color:var(--paper)}
+  .hero h1 .amber{color:var(--amber)}
+  .hero p{margin:30px 0 40px;font-size:1.16rem;max-width:46ch;color:var(--muted);font-weight:400;line-height:1.6}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{font-family:'Oswald',sans-serif;font-size:0.86rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;padding:16px 32px;border-radius:2px;transition:.2s;display:inline-block}
+  .btn-primary{background:var(--amber);color:var(--bg)}
+  .btn-primary:hover{background:var(--amber-bright)}
+  .btn-ghost{border:1.5px solid var(--muted);color:var(--paper)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+  .pole{display:flex;align-items:center;gap:14px;margin-top:38px;color:var(--muted);font-size:0.92rem}
+  .pole .stars{color:var(--amber);letter-spacing:2px;font-size:1.05rem}
+
+  section{padding:90px 0}
+  .sec-head{margin-bottom:50px}
+  .sec-head .eyebrow{margin-bottom:16px}
+  .sec-head h2{font-size:clamp(2.2rem,7vw,3.2rem);color:var(--paper)}
+  .sec-head h2 .amber{color:var(--amber)}
+
+  .services{background:var(--bg-soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:0}
+  .svc{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 4px;border-bottom:1px solid var(--rule);transition:.2s}
+  .svc:last-child{border-bottom:none}
+  .svc:hover{padding-left:14px;border-color:var(--amber)}
+  .svc .name{font-family:'Oswald',sans-serif;font-weight:500;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.02em;color:var(--paper)}
+  .svc .desc{font-size:0.92rem;color:var(--muted);margin-top:3px;font-family:'Inter',sans-serif}
+  .svc .price{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.5rem;color:var(--amber);white-space:nowrap}
+
+  .about-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .about-stat{border:1px solid var(--rule);background:var(--panel);border-radius:3px;padding:38px}
+  .about-stat .big{font-family:'Oswald',sans-serif;font-weight:700;font-size:3.4rem;color:var(--amber);line-height:1;text-transform:uppercase}
+  .about-stat .lbl{font-family:'Oswald',sans-serif;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:10px;font-weight:500}
+  .about-copy h2{font-size:2.3rem;color:var(--paper);margin-bottom:20px}
+  .about-copy h2 .amber{color:var(--amber)}
+  .about-copy p{color:var(--muted);font-weight:400;margin-bottom:16px;line-height:1.7;font-size:1.04rem}
+  .quote{border-left:3px solid var(--amber);padding-left:20px;margin-top:28px;font-family:'Oswald',sans-serif;font-weight:400;font-style:normal;font-size:1.3rem;text-transform:uppercase;letter-spacing:0.01em;line-height:1.25;color:var(--paper)}
+  .quote .who{display:block;margin-top:12px;font-family:'Inter',sans-serif;text-transform:none;letter-spacing:0.14em;font-size:0.74rem;color:var(--muted);font-weight:500}
+
+  .visit{background:var(--bg-soft);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  .info-card{background:var(--panel);border-radius:3px;padding:34px;border:1px solid var(--rule)}
+  .info-card h3{font-size:1.5rem;color:var(--amber);margin-bottom:22px}
+  .info-row{display:flex;justify-content:space-between;gap:14px;padding:10px 0;font-size:0.96rem;border-bottom:1px solid var(--rule)}
+  .info-row:last-child{border-bottom:none}
+  .info-row span:first-child{color:var(--muted);font-weight:400}
+  .info-row span:last-child{color:var(--paper);font-weight:500;text-align:right}
+  .info-card a{color:var(--amber);text-decoration:none;font-weight:500}
+
+  .final{background:var(--bg);text-align:center}
+  .final h2{font-size:clamp(2.4rem,8vw,3.8rem);color:var(--paper);margin-bottom:18px}
+  .final h2 .amber{color:var(--amber)}
+  .final p{color:var(--muted);font-weight:400;margin-bottom:34px}
+
+  footer{background:#100f0b;color:var(--muted);padding:34px 0;text-align:center;font-size:0.84rem;font-weight:400;border-top:1px solid var(--rule)}
+  .demo-tag{display:inline-block;margin-top:14px;font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--bg);background:var(--amber);padding:5px 12px;border-radius:2px}
+
+  @media(min-width:780px){
+    .svc-grid{grid-template-columns:1fr 1fr;column-gap:60px}
+    .about-grid{grid-template-columns:0.6fr 1.4fr;gap:56px}
+    .visit-grid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="logo">Driftwood <em>Barber Co.</em></div>
+    <a class="call-btn" href="#book">Book</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Harbor Street &middot; Old-School Cuts</div>
+    <h1>Sharp cuts.<br><span class="amber">Salt air.</span></h1>
+    <p>The chair you actually look forward to. A two-chair shop on Harbor Street &mdash; classic cuts, beard work, and a hot-towel shave that takes exactly as long as it should.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#book">Book a chair</a>
+      <a class="btn btn-ghost" href="#services">See the menu</a>
+    </div>
+    <div class="pole"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 &middot; loved by the regulars</div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The menu</div>
+      <h2>What&rsquo;s <span class="amber">on offer</span></h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div><div class="name">Haircut</div><div class="desc">Clipper or scissor &mdash; your call.</div></div><div class="price">$35</div></div>
+      <div class="svc"><div><div class="name">Cut + Beard</div><div class="desc">Full reset, top to chin.</div></div><div class="price">$50</div></div>
+      <div class="svc"><div><div class="name">Hot-Towel Shave</div><div class="desc">Straight razor, the slow way.</div></div><div class="price">$40</div></div>
+      <div class="svc"><div><div class="name">Beard Trim</div><div class="desc">Shaped, lined, detailed.</div></div><div class="price">$25</div></div>
+      <div class="svc"><div><div class="name">Lineup</div><div class="desc">Edge-up between cuts.</div></div><div class="price">$20</div></div>
+      <div class="svc"><div><div class="name">Kids&rsquo; Cut</div><div class="desc">12 and under, no fuss.</div></div><div class="price">$25</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-stat">
+      <div class="big">14 yrs</div>
+      <div class="lbl">On Harbor Street</div>
+      <hr style="border:none;border-top:1px solid var(--rule);margin:26px 0">
+      <div class="big" style="font-size:2rem">2 chairs</div>
+      <div class="lbl">No rotation, no rush</div>
+    </div>
+    <div class="about-copy">
+      <h2>One shop. <span class="amber">Two chairs.</span> No app maze.</h2>
+      <p>Driftwood has been cutting hair on Harbor Street for fourteen years. The kind of place where the same hands have been on the same heads long enough to know the cowlick before you sit down.</p>
+      <p>Walk in for a lineup, settle in for a shave. Either way you get a barber who remembers your name and the kid&rsquo;s soccer schedule.</p>
+      <div class="quote">&ldquo;Best cut on the coast. The shave alone is worth the drive.&rdquo;<span class="who">&mdash; A Driftwood regular</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Plan your visit</div>
+      <h2>Find the <span class="amber">chair</span></h2>
+    </div>
+    <div class="visit-grid">
+      <div class="info-card">
+        <h3>The shop</h3>
+        <div class="info-row"><span>Address</span><span>118 Harbor Street</span></div>
+        <div class="info-row"><span>Town</span><span>Driftwood Bay</span></div>
+        <div class="info-row"><span>Phone</span><span><a href="#book">(555) 014-2200</a></span></div>
+        <div class="info-row"><span>Booking</span><span><a href="#book">Book online &rarr;</a></span></div>
+        <div style="margin-top:22px">
+          <a class="btn btn-primary" style="width:100%;text-align:center;display:flex;align-items:center;justify-content:center" href="#book">Book a chair</a>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>Hours</h3>
+        <div class="info-row"><span>Tue &ndash; Fri</span><span>9am &ndash; 7pm</span></div>
+        <div class="info-row"><span>Saturday</span><span>8am &ndash; 4pm</span></div>
+        <div class="info-row"><span>Sun &ndash; Mon</span><span>Closed</span></div>
+        <div class="info-row"><span>Walk-ins</span><span>When a chair&rsquo;s open</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Take the <span class="amber">chair.</span></h2>
+    <p>Two taps and you&rsquo;re on the calendar.</p>
+    <a class="btn btn-primary" href="#book">Book a chair</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Driftwood Barber Co. &middot; 118 Harbor Street &middot; Driftwood Bay
+    <br><span class="demo-tag">Sample site &middot; built by Chairside</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Chairside Barber Sites — robots.txt
+# Homepage is indexable (SEO for "websites for barbers"). The /demo/
+# sample sites self-noindex via meta tag. AI crawlers explicitly allowed
+# so the site is eligible for citation by LLM-based search.
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.chairsidebarbersites.com/sitemap.xml
