@@ -23,20 +23,19 @@ The single reference for colors, type, voice, and assets. Everything
 | Hairline rule | `#332e23` |
 
 ## Type
-- **Wordmark:** Cormorant Garamond (elegant high-contrast serif, caps + letter-spaced)
-- **Tagline:** Cormorant Garamond *italic*
+- **Wordmark:** Bebas Neue — `CHAIR` (cream) + `SIDE` (amber), kerning-fixed (-0.22em)
 - **Section labels / kickers / headings:** Oswald (condensed)
 - **Body:** Inter
-- (Bebas Neue retired from the wordmark 2026-06-18.)
+- (Cormorant Garamond serif wordmark was trialed 2026-06-18 then reverted to Bebas
+  to match the site. Tagline *a cut above a template* available if wanted.)
 
 ## Logo — FINAL (set 2026-06-18, emblem direction)
 - **Mark:** the **monoline barber-chair emblem** Ashley generated (Gemini) —
   a single-line chair inside concentric rings + a segmented outer ring. Source
   board `chairside-private/chairside-logos/Gemini_Generated_Image_zgz5iozgz5iozgz5.png`
   (no "EST 2026"). Extracted by keying out the cream, recolored amber-on-`#15140f`.
-- **Wordmark:** `CHAIRSIDE` in Cormorant Garamond serif (caps, ~0.13em tracking).
-- **Tagline:** *a cut above a template* (Cormorant italic).
-- **Lockup:** emblem + CHAIRSIDE + ruled `BARBER SITES` (Inter) + tagline.
+- **Wordmark:** Bebas Neue `CHAIR`(cream) + `SIDE`(amber) — matches the site.
+- **Lockup (OG/share):** emblem + Bebas CHAIR/SIDE + ruled `BARBER SITES` (Inter).
 - **Production assets** (`scripts/extract-emblem.js` → `build-emblem-assets.js`):
   - Header mark (transparent): `chairside-site/assets/emblem-mark.png`
   - Favicons: `favicon.ico` (16+32), `favicon-16/32.png`, `apple-touch-icon.png`
