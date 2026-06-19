@@ -11,16 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   /* Driftwood Barber Co. — DEMO. Coastal "driftwood" palette: bleached sand
-     + sea-glass teal + driftwood charcoal. Deliberately distinct from the
+     + dusty blue + driftwood charcoal. Deliberately distinct from the
      Chairside brand. (Var names kept from the dark template: --paper is now
-     the dark ink text; --amber is now the sea-glass accent.) */
+     the dark ink text; --amber is now the dusty-blue accent.) */
   :root{
     --bg:#f0ece2;          /* bleached sand (page) */
     --bg-soft:#e8e1d2;     /* deeper sand (alt sections) */
     --panel:#fbf9f3;       /* near-white cards */
     --paper:#26373b;       /* driftwood charcoal-teal (text + headings) */
-    --amber:#2f897d;       /* sea-glass teal (accent) */
-    --amber-bright:#3aa394;/* hover */
+    --amber:#4f7392;       /* dusty blue (accent) */
+    --amber-bright:#6b90af;/* hover */
     --muted:#7e7a6d;       /* driftwood gray (muted text) */
     --rule:#dacfba;        /* sand hairline */
   }
@@ -44,7 +44,7 @@
 
   .hero{position:relative;padding:120px 0 110px;overflow:hidden}
   .hero::after{content:"";position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:50%;
-    background:radial-gradient(circle,rgba(47,137,125,0.14),transparent 62%);pointer-events:none}
+    background:radial-gradient(circle,rgba(79,115,146,0.14),transparent 62%);pointer-events:none}
   .hero-inner{position:relative;max-width:820px}
   .eyebrow{font-family:'Oswald',sans-serif;font-size:0.82rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--amber);margin-bottom:26px;font-weight:500}
   .hero h1{font-size:clamp(3.4rem,12vw,6.4rem);color:var(--paper)}
@@ -92,7 +92,7 @@
   .info-row:last-child{border-bottom:none}
   .info-row span:first-child{color:var(--muted);font-weight:400}
   .info-row span:last-child{color:var(--paper);font-weight:500;text-align:right}
-  .info-card a{color:var(--amber);text-decoration:none;font-weight:500}
+  .info-row a{color:var(--amber);text-decoration:none;font-weight:500}
 
   .final{background:var(--bg);text-align:center}
   .final h2{font-size:clamp(2.4rem,8vw,3.8rem);color:var(--paper);margin-bottom:18px}
