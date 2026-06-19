@@ -59,16 +59,11 @@
   .svc .n{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:0.03em;color:var(--paper)}
   .svc .d{font-size:0.86rem;color:var(--muted);font-family:'Inter',sans-serif;letter-spacing:0}
   .svc .p{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--steel);white-space:nowrap}
-  /* GALLERY — monochrome tiles standing in for real cut photos */
-  .gallery .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  /* GALLERY — real cut photos, desaturated to keep Onyx's monochrome look */
+  .gallery .gal-grid{display:grid;grid-template-columns:1fr;gap:8px}
   .tile{aspect-ratio:4/5;border:1px solid var(--line);position:relative;overflow:hidden}
-  .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.5))}
-  .g1{background:radial-gradient(80% 80% at 40% 30%,#4a4a50,#161618)}
-  .g2{background:radial-gradient(80% 80% at 60% 35%,#3d3d43,#101012)}
-  .g3{background:radial-gradient(90% 70% at 50% 25%,#55555c,#1a1a1d)}
-  .g4{background:radial-gradient(80% 80% at 35% 40%,#42424a,#0e0e10)}
-  .g5{background:radial-gradient(85% 75% at 55% 30%,#4f4f56,#151517)}
-  .g6{background:radial-gradient(80% 80% at 45% 35%,#393940,#0c0c0e)}
+  .tile img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.06)}
+  .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,0.5));pointer-events:none}
   .gal-note{text-align:center;margin-top:18px;font-family:'Inter',sans-serif;font-size:0.82rem;color:var(--muted);letter-spacing:0.04em}
   /* ABOUT */
   .about{max-width:780px;margin:0 auto;text-align:center}
@@ -121,10 +116,11 @@
 <section id="work" class="gallery"><div class="wrap">
   <div class="sec-head"><div class="eyebrow">The work</div><h2>The portfolio</h2></div>
   <div class="gal-grid">
-    <div class="tile g1"></div><div class="tile g2"></div><div class="tile g3"></div>
-    <div class="tile g4"></div><div class="tile g5"></div><div class="tile g6"></div>
+    <div class="tile"><img src="img/cut-1.jpg" alt="Skin fade with a pompadour"></div>
+    <div class="tile"><img src="img/cut-2.jpg" alt="Textured curls over a high fade"></div>
+    <div class="tile"><img src="img/cut-3.jpg" alt="Slick back with a skin fade"></div>
   </div>
-  <div class="gal-note">Every cut, on the wall. (Sample layout &mdash; a real build uses the barber&rsquo;s own photos.)</div>
+  <div class="gal-note">A wall of work. (Demo imagery &mdash; a real build uses the barber&rsquo;s own cut photos.)</div>
 </div></section>
 
 <section id="services" class="services"><div class="wrap">
