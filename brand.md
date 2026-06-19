@@ -11,16 +11,17 @@ The single reference for colors, type, voice, and assets. Everything
 - **Mailbox:** hello@chairsidebarbersites.com (provision in GoDaddy M365)
 - **IG:** @chairsidebarbersites (confirmed 2026-06-18)
 
-## Palette (the "black & amber")
+## Palette (black & sand-gold — per Gemini's logo color guidance, 2026-06-18)
 | Role | Hex |
 |---|---|
 | Near-black (primary dark) | `#15140f` |
-| Amber / gold (accent) | `#d9a441` |
-| Bright amber (hover/highlight) | `#edbc5c` |
-| Muted gold (amber on light) | `#b0833f` |
-| Cream / paper (light text) | `#f3ece0` |
+| Gold accent — **Sand Gold** (flat; also the emblem fill) | `#c5a059` |
+| Bright gold (hover/highlight) | `#d9ba7e` |
+| Off-white (main text, per Gemini) | `#f5f5f0` |
 | Muted text | `#9a9078` |
 | Hairline rule | `#332e23` |
+- One flat gold hex on the emblem + accent text + buttons (no gradient).
+  Previous bright amber `#d9a441` / cream `#f3ece0` retired 2026-06-18.
 
 ## Type
 - **Wordmark:** Bebas Neue — `CHAIR` (cream) + `SIDE` (amber), kerning-fixed (-0.22em)
