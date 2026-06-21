@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Chairside — Launch Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#15140f;--panel:#1d1b14;--sand:#c5a059;--bright:#d9ba7e;--paper:#f5f5f0;--muted:#9a9078;--rule:#332e23}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;padding:0 0 80px}
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px}
+  header{padding:34px 0 8px;text-align:center}
+  .wm{font-family:'Bebas Neue';font-size:2rem;letter-spacing:0.04em}
+  .wm b{color:var(--sand);font-weight:400;margin-left:-0.18em}
+  .kit{font-family:'Oswald';font-size:0.8rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--sand);margin-top:6px}
+  .intro{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:18px 20px;margin:22px 0;font-size:0.95rem;color:var(--muted)}
+  .intro b{color:var(--paper)}
+  .intro ol{margin:8px 0 0 18px}.intro li{margin:4px 0}
+  .post{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:18px;margin:18px 0}
+  .ptop{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .pnum{font-family:'Bebas Neue';font-size:1.5rem;color:var(--sand);line-height:1}
+  .ptype{font-family:'Oswald';font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--bg);background:var(--sand);padding:3px 9px;border-radius:3px}
+  .ptype.reel{background:var(--bright)}
+  .pimg{width:100%;border-radius:8px;display:block;border:1px solid var(--rule)}
+  .carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .carousel img{width:100%;border-radius:6px;border:1px solid var(--rule)}
+  video{width:100%;border-radius:8px;border:1px solid var(--rule);background:#000}
+  .save{display:inline-block;margin-top:10px;font-size:0.82rem;color:var(--sand);text-decoration:none;font-weight:600}
+  .cap{margin-top:14px}
+  .caplabel{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+  .capbox{background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;font-size:0.92rem;white-space:pre-wrap;color:var(--paper)}
+  .copy{margin-top:8px;font-family:'Oswald';font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--bg);background:var(--sand);border:none;border-radius:4px;padding:9px 16px;cursor:pointer}
+  .copy.done{background:#5a8a5a}
+  .note{margin-top:12px;font-size:0.85rem;color:var(--muted);border-left:2px solid var(--sand);padding-left:12px}
+  .note b{color:var(--paper)}
+  .seedhead,.reelhead{font-family:'Oswald';font-size:0.82rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--sand);margin:30px 0 6px;text-align:center}
+  .reelhead{color:var(--bright)}
+  .sub{text-align:center;color:var(--muted);font-size:0.86rem;margin-bottom:4px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="wm">CHAIR<b>SIDE</b></div>
+  <div class="kit">Launch Kit</div>
+</div></header>
+
+<div class="wrap">
+  <div class="intro">
+    <b>How to use this.</b> Post the first batch to seed your grid so it looks established, <b>then</b> post the Reel last (it's your reach driver — a fuller grid converts the people it brings in).
+    <ol>
+      <li><b>Save an image:</b> long-press it → Save to Photos.</li>
+      <li><b>Copy a caption:</b> tap "Copy caption", paste into IG.</li>
+      <li><b>Space them out</b> a little if you like, but with 0 followers it's fine to post the batch close together.</li>
+    </ol>
+  </div>
+
+  <div class="seedhead">① Seed the grid — post these first</div>
+  <div class="sub">Mix of founder cards, demo work, and the carousel</div>
+  <div id="grid"></div>
+
+  <div class="reelhead">② Then the Reel — your reach play</div>
+  <div class="sub">Post last, once the grid's full</div>
+  <div id="reel"></div>
+</div>
+
+<script>
+const B = 'https://www.chairsidebarbersites.com/assets/ig/';
+const GRID = [
+  {img:'card-1.png', type:'Card', cap:`On Instagram, every barber's fades look the same.\nYour website is where a stranger decides you're THEIR barber. That's the whole game.\n\n👇 chairsidebarbersites.com\n\n#barber #barberlife #barbergram #barbermarketing`},
+  {img:'onyx-feed.png', type:'Post', cap:`What a real barber's website looks like — built from one conversation, not a template. Yours could look like this. DM me. 💈\n\n#barber #barbershop #fade #barberlife`},
+  {img:'card-3.png', type:'Card', cap:`I don't send you a form.\nWe talk for an hour, then I build a site that sounds like you. That's the whole difference.\n\nDM me. 💈`},
+  {img:'crown-feed.png', type:'Post', cap:`Fifteen years on the same corner deserves more than a booking link — a site that tells your story. (Sample.) DM me. 👇`},
+  {img:'card-5.png', type:'Card', cap:`ChatGPT can't read your Instagram.\nA real website is the only thing it can recommend — right now you're invisible to it. Let's fix that.\n\n👇 chairsidebarbersites.com`},
+  {img:'driftwood-feed.png', type:'Post', cap:`Old-school cuts, modern homepage. A real site for a real barber. This is a sample — yours would sound like you. 💈`},
+  {img:'card-10.png', type:'Card', cap:`Real websites for barbers. Not templates — built from a real conversation.\n\nDM your handle and let's talk. 💈`},
+  {img:'apex-feed.png', type:'Post', cap:`Clean, modern, fast. A website that matches the work. DM me to build yours. 💈\n\n#barber #fade #barbergram`},
+  {carousel:['anatomy-1.png','anatomy-2.png','anatomy-3.png','anatomy-4.png','anatomy-5.png','anatomy-6.png'], type:'Carousel',
+   cap:`Swipe 👉 what actually gets a new client into your chair (it's not just the cut).\nReal sites for barbers, built from a real convo. DM me your handle. 💈`,
+   note:`<b>Carousel:</b> save all 6 in order, then make ONE post and select them 1 → 6.`},
+];
+const REEL = {video:'reel-onyx.mp4', type:'Reel',
+  cap:`Most barbers send people to a booking link. This is what a real website looks like. 💈\nWant one that sounds like you? DM me.\n\n#barber #barberlife #barbergram #fade`,
+  note:`<b>Post as a Reel</b> (not a normal post). Add a <b>trending audio</b> (tap the music note — this drives the reach more than the caption) and a <b>text hook on the first frame</b>, e.g. "A barber's actual website 👀".`};
+
+function copyBtn(cap){
+  const b=document.createElement('button');b.className='copy';b.textContent='Copy caption';
+  b.onclick=()=>{navigator.clipboard.writeText(cap).then(()=>{b.textContent='Copied ✓';b.classList.add('done');setTimeout(()=>{b.textContent='Copy caption';b.classList.remove('done')},1600)})};
+  return b;
+}
+function render(p,n,container){
+  const el=document.createElement('div');el.className='post';
+  const top=document.createElement('div');top.className='ptop';
+  top.innerHTML=`<span class="pnum">${n}</span><span class="ptype ${p.type==='Reel'?'reel':''}">${p.type}</span>`;
+  el.appendChild(top);
+  if(p.carousel){
+    const g=document.createElement('div');g.className='carousel';
+    p.carousel.forEach(f=>{const im=document.createElement('img');im.src=B+f;im.loading='lazy';g.appendChild(im)});
+    el.appendChild(g);
+  } else if(p.video){
+    const v=document.createElement('video');v.src=B+p.video;v.controls=true;v.playsInline=true;el.appendChild(v);
+    const a=document.createElement('a');a.className='save';a.href=B+p.video;a.target='_blank';a.textContent='Open the video to save it →';el.appendChild(a);
+  } else {
+    const im=document.createElement('img');im.className='pimg';im.src=B+p.img;im.loading='lazy';el.appendChild(im);
+  }
+  const cap=document.createElement('div');cap.className='cap';
+  cap.innerHTML=`<div class="caplabel">Caption</div><div class="capbox"></div>`;
+  cap.querySelector('.capbox').textContent=p.cap;
+  cap.appendChild(copyBtn(p.cap));
+  el.appendChild(cap);
+  if(p.note){const nt=document.createElement('div');nt.className='note';nt.innerHTML=p.note;el.appendChild(nt)}
+  container.appendChild(el);
+}
+GRID.forEach((p,i)=>render(p,i+1,document.getElementById('grid')));
+render(REEL,GRID.length+1,document.getElementById('reel'));
+</script>
+</body>
+</html>
