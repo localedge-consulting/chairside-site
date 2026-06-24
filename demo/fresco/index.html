@@ -4,27 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Apex — Barber · Sample Site by Chairside</title>
+<title>Fresco — Barber · Sample Site by Chairside</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--paper:#ffffff;--soft:#f4f4f5;--ink:#0e0e10;--red:#e8311d;--muted:#71717a;--rule:#e4e4e7}
+  :root{--paper:#f3ece0;--soft:#eae1d2;--ink:#211d18;--accent:#2750dd;--muted:#7c7468;--rule:#ded3c2}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
   h1,h2,h3{font-family:'Archivo',system-ui,sans-serif;font-weight:800;line-height:0.98;letter-spacing:-0.02em;text-transform:uppercase}
   .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  header{position:sticky;top:0;z-index:50;background:rgba(243,236,224,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
   .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
   .logo{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.3rem;text-transform:uppercase;letter-spacing:-0.01em;color:var(--ink)}
-  .logo em{font-style:normal;color:var(--red)}
-  .call-btn{font-family:'Archivo',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:var(--red);text-decoration:none;padding:11px 22px;border-radius:2px}
+  .logo em{font-style:normal;color:var(--accent)}
+  .call-btn{font-family:'Archivo',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:var(--accent);text-decoration:none;padding:11px 22px;border-radius:2px}
   .hero{padding:110px 0 92px;position:relative}
   .hero-inner{max-width:880px}
-  .eyebrow{font-family:'Archivo',sans-serif;font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);margin-bottom:22px;font-weight:700}
+  .eyebrow{font-family:'Archivo',sans-serif;font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;font-weight:700}
   .hero h1{font-size:clamp(3.4rem,12vw,7rem);color:var(--ink)}
-  .hero h1 .r{color:var(--red)}
+  .hero h1 .r{color:var(--accent)}
   .hero p{margin:30px 0 38px;font-size:1.16rem;max-width:44ch;color:var(--muted);font-weight:400}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px}
   .btn{font-family:'Archivo',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:16px 30px;border-radius:2px;display:inline-block}
@@ -34,16 +34,16 @@
   .sec-head{margin-bottom:44px}
   .sec-head .eyebrow{margin-bottom:14px}
   .sec-head h2{font-size:clamp(2.2rem,7vw,3.4rem);color:var(--ink)}
-  .sec-head h2 .r{color:var(--red)}
+  .sec-head h2 .r{color:var(--accent)}
   .services{background:var(--ink);color:#fff;border-radius:0}
   .services .sec-head h2{color:#fff}
-  .services .eyebrow{color:var(--red)}
+  .services .eyebrow{color:var(--accent)}
   .svc-grid{display:grid;grid-template-columns:1fr;gap:0}
   .svc{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:24px 2px;border-bottom:1px solid #26262b}
   .svc:last-child{border-bottom:none}
   .svc .n{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.45rem;text-transform:uppercase;letter-spacing:-0.01em;color:#fff}
   .svc .d{font-size:0.88rem;color:#a1a1aa;margin-top:2px;font-family:'Inter',sans-serif;font-weight:400;text-transform:none;letter-spacing:0}
-  .svc .p{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.45rem;color:var(--red);white-space:nowrap}
+  .svc .p{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.45rem;color:var(--accent);white-space:nowrap}
   .visit-grid{display:grid;grid-template-columns:1fr;gap:24px}
   .info-card{background:var(--soft);border-radius:3px;padding:32px;border:1px solid var(--rule)}
   .info-card h3{font-size:1.4rem;color:var(--ink);margin-bottom:20px}
@@ -53,35 +53,35 @@
   .info-row span:last-child{color:var(--ink);font-weight:600;text-align:right}
   .final{text-align:center}
   .final h2{font-size:clamp(2.6rem,9vw,4.4rem);color:var(--ink);margin-bottom:16px}
-  .final h2 .r{color:var(--red)}
+  .final h2 .r{color:var(--accent)}
   .final p{color:var(--muted);margin-bottom:30px}
   footer{background:var(--ink);color:#a1a1aa;padding:32px 0;text-align:center;font-size:0.84rem}
-  .demo-tag{display:inline-block;margin-top:14px;font-family:'Archivo',sans-serif;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;background:var(--red);padding:5px 12px;border-radius:2px;font-weight:700}
-  .band{background:var(--red);color:#fff;text-align:center;padding:78px 0}
+  .demo-tag{display:inline-block;margin-top:14px;font-family:'Archivo',sans-serif;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;background:var(--accent);padding:5px 12px;border-radius:2px;font-weight:700}
+  .band{background:var(--accent);color:#fff;text-align:center;padding:78px 0}
   .band h2{color:#fff;font-size:clamp(2.1rem,7vw,3.4rem);max-width:18ch;margin:0 auto 14px}
   .band p{max-width:42ch;margin:0 auto 26px;color:rgba(255,255,255,0.92);font-size:1.06rem}
   .band .btn-primary{background:#fff;color:var(--ink)}
   .about{max-width:860px}
   .about .big{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(2.1rem,7vw,3.3rem);text-transform:uppercase;line-height:0.98;letter-spacing:-0.02em;margin-bottom:20px;max-width:16ch}
-  .about .big .r{color:var(--red)}
+  .about .big .r{color:var(--accent)}
   .about p{color:var(--muted);font-size:1.08rem;max-width:60ch}
   .craft .intro{max-width:62ch;color:var(--muted);font-size:1.06rem;margin:-22px 0 40px}
   .craft .intro strong{color:var(--ink);font-weight:700}
   .craft-list{border-top:2px solid var(--ink)}
   .craft-item{display:grid;grid-template-columns:1.7em 1fr;gap:22px;padding:24px 2px;border-bottom:1px solid var(--rule);align-items:start}
-  .craft-item .num{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.8rem;color:var(--red);line-height:1}
+  .craft-item .num{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.8rem;color:var(--accent);line-height:1}
   .craft-item h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.3rem;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:5px;color:var(--ink)}
   .craft-item p{color:var(--muted);font-size:1rem;max-width:66ch}
   @media(min-width:780px){.svc-grid{grid-template-columns:1fr 1fr;column-gap:54px}.visit-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-<header><div class="wrap bar"><div class="logo">APE<em>X</em></div><a class="call-btn" href="#book">Book</a></div></header>
+<header><div class="wrap bar"><div class="logo">FRESC<em>O</em></div><a class="call-btn" href="#book">Book</a></div></header>
 
 <section class="hero"><div class="wrap hero-inner">
   <div class="eyebrow">Barber &amp; designer &middot; Downtown</div>
   <h1>Your head.<br>My <span class="r">canvas.</span></h1>
-  <p>I&rsquo;m Apex &mdash; a barber and designer out of Method Barbershop, downtown. Skin fades, hard parts, and freehand designs cut by hand. Bring me a reference or just an idea, and I&rsquo;ll draw it into your cut.</p>
+  <p>I&rsquo;m Fresco &mdash; a barber and designer out of Method Barbershop, downtown. Skin fades, hard parts, and freehand designs cut by hand. Bring me a reference or just an idea, and I&rsquo;ll draw it into your cut.</p>
   <div class="cta-row"><a class="btn btn-primary" href="#book">Book now</a><a class="btn btn-ghost" href="#services">Price list</a></div>
 </div></section>
 
@@ -94,7 +94,7 @@
 <section id="about"><div class="wrap about">
   <div class="eyebrow">The barber</div>
   <div class="big">I don&rsquo;t just cut.<br>I <span class="r">design.</span></div>
-  <p>I&rsquo;m Apex &mdash; I came up doing freehand designs and never stopped. To me a head of hair is a canvas: a hard part with a clean shadow, a pattern shaved by eye, a fade that turns into a design at the temple. I cut out of Method Barbershop, downtown. Tell me what you&rsquo;re picturing &mdash; the bolder the better &mdash; and I&rsquo;ll make it unmistakably yours.</p>
+  <p>I&rsquo;m Fresco &mdash; I came up doing freehand designs and never stopped. To me a head of hair is a canvas: a hard part with a clean shadow, a pattern shaved by eye, a fade that turns into a design at the temple. I cut out of Method Barbershop, downtown. Tell me what you&rsquo;re picturing &mdash; the bolder the better &mdash; and I&rsquo;ll make it unmistakably yours.</p>
 </div></section>
 
 <section id="craft" class="craft"><div class="wrap">
@@ -127,7 +127,7 @@
       <div class="info-row"><span>Shop</span><span>Method Barbershop</span></div>
       <div class="info-row"><span>Address</span><span>9 Market Square, Unit B</span></div>
       <div class="info-row"><span>Parking</span><span>Lot behind the building</span></div>
-      <div class="info-row"><span>Tag me</span><span>@apexfades</span></div>
+      <div class="info-row"><span>Tag me</span><span>@frescocuts</span></div>
       <div style="margin-top:22px"><a class="btn btn-primary" style="width:100%;text-align:center;display:flex;align-items:center;justify-content:center" href="#book">Book online</a></div>
     </div>
     <div class="info-card"><h3>My hours</h3>
@@ -145,6 +145,6 @@
   <a class="btn btn-primary" href="#book">Book now</a>
 </div></section>
 
-<footer><div class="wrap">Apex &middot; Method Barbershop, 9 Market Square &middot; Downtown<br><span class="demo-tag">Sample site &middot; built by Chairside</span></div></footer>
+<footer><div class="wrap">Fresco &middot; Method Barbershop, 9 Market Square &middot; Downtown<br><span class="demo-tag">Sample site &middot; built by Chairside</span></div></footer>
 </body>
 </html>
