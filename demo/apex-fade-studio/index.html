@@ -57,17 +57,55 @@
   .final p{color:var(--muted);margin-bottom:30px}
   footer{background:var(--ink);color:#a1a1aa;padding:32px 0;text-align:center;font-size:0.84rem}
   .demo-tag{display:inline-block;margin-top:14px;font-family:'Archivo',sans-serif;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;background:var(--red);padding:5px 12px;border-radius:2px;font-weight:700}
+  .band{background:var(--red);color:#fff;text-align:center;padding:78px 0}
+  .band h2{color:#fff;font-size:clamp(2.1rem,7vw,3.4rem);max-width:18ch;margin:0 auto 14px}
+  .band p{max-width:42ch;margin:0 auto 26px;color:rgba(255,255,255,0.92);font-size:1.06rem}
+  .band .btn-primary{background:#fff;color:var(--ink)}
+  .about{max-width:860px}
+  .about .big{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(2.1rem,7vw,3.3rem);text-transform:uppercase;line-height:0.98;letter-spacing:-0.02em;margin-bottom:20px;max-width:16ch}
+  .about .big .r{color:var(--red)}
+  .about p{color:var(--muted);font-size:1.08rem;max-width:60ch}
+  .craft .intro{max-width:62ch;color:var(--muted);font-size:1.06rem;margin:-22px 0 40px}
+  .craft .intro strong{color:var(--ink);font-weight:700}
+  .craft-list{border-top:2px solid var(--ink)}
+  .craft-item{display:grid;grid-template-columns:1.7em 1fr;gap:22px;padding:24px 2px;border-bottom:1px solid var(--rule);align-items:start}
+  .craft-item .num{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.8rem;color:var(--red);line-height:1}
+  .craft-item h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.3rem;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:5px;color:var(--ink)}
+  .craft-item p{color:var(--muted);font-size:1rem;max-width:66ch}
   @media(min-width:780px){.svc-grid{grid-template-columns:1fr 1fr;column-gap:54px}.visit-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-<header><div class="wrap bar"><div class="logo">APEX<em>FADES</em></div><a class="call-btn" href="#book">Book</a></div></header>
+<header><div class="wrap bar"><div class="logo">APE<em>X</em></div><a class="call-btn" href="#book">Book</a></div></header>
 
 <section class="hero"><div class="wrap hero-inner">
-  <div class="eyebrow">Downtown &middot; Skin Fades &amp; Designs</div>
-  <h1>Clean fades.<br>No <span class="r">guesswork.</span></h1>
-  <p>Walk out looking like the version of you that has it together. I&rsquo;m Apex &mdash; skin fades, designs, and beard sculpts out of Method Barbershop downtown, booked online and done right.</p>
+  <div class="eyebrow">Barber &amp; designer &middot; Downtown</div>
+  <h1>Your head.<br>My <span class="r">canvas.</span></h1>
+  <p>I&rsquo;m Apex &mdash; a barber and designer out of Method Barbershop, downtown. Skin fades, hard parts, and freehand designs cut by hand. Bring me a reference or just an idea, and I&rsquo;ll draw it into your cut.</p>
   <div class="cta-row"><a class="btn btn-primary" href="#book">Book now</a><a class="btn btn-ghost" href="#services">Price list</a></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>Bring an idea. Leave with it cut in.</h2>
+  <p>Seen a design you want &mdash; or got one in your head? Show me. I&rsquo;ll tell you how it&rsquo;ll sit, then freehand it into your fade. No stencils, no &ldquo;close enough.&rdquo;</p>
+  <a class="btn btn-primary" href="#book">Book the chair</a>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <div class="eyebrow">The barber</div>
+  <div class="big">I don&rsquo;t just cut.<br>I <span class="r">design.</span></div>
+  <p>I&rsquo;m Apex &mdash; I came up doing freehand designs and never stopped. To me a head of hair is a canvas: a hard part with a clean shadow, a pattern shaved by eye, a fade that turns into a design at the temple. I cut out of Method Barbershop, downtown. Tell me what you&rsquo;re picturing &mdash; the bolder the better &mdash; and I&rsquo;ll make it unmistakably yours.</p>
+</div></section>
+
+<section id="craft" class="craft"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">The craft</div><h2>Cut by hand, not by <span class="r">stencil</span></h2></div>
+  <p class="intro">A clean design isn&rsquo;t a sticker. It&rsquo;s drawn freehand, in the chair, around the way your hair actually grows &mdash; <strong>which is why it fits you and grows out clean.</strong></p>
+  <div class="craft-list">
+    <div class="craft-item"><div class="num">01</div><div><h3>The map</h3><p>We start with your photo or the idea in your head, then I map it to your hairline, your part, and the canvas you&rsquo;ve actually got &mdash; so it sits on your head, not a template.</p></div></div>
+    <div class="craft-item"><div class="num">02</div><div><h3>Freehand</h3><p>No stencils. Every line is cut by eye with the corner of the trimmer, the way a tattoo is drawn &mdash; which is why no two ever come out identical.</p></div></div>
+    <div class="craft-item"><div class="num">03</div><div><h3>The shadow</h3><p>Depth comes from fading the edges of the design down into the skin, so a flat pattern reads as carved &mdash; not drawn on.</p></div></div>
+    <div class="craft-item"><div class="num">04</div><div><h3>Grows out clean</h3><p>Lines are cut to soften evenly, so week two still looks intentional &mdash; never like something half-erased.</p></div></div>
+  </div>
 </div></section>
 
 <section id="services" class="services"><div class="wrap">
@@ -103,7 +141,7 @@
 
 <section class="final"><div class="wrap">
   <h2>Book the <span class="r">chair.</span></h2>
-  <p>Pick a time. Show up. Walk out sharp.</p>
+  <p>Bring the idea. I&rsquo;ll draw it in.</p>
   <a class="btn btn-primary" href="#book">Book now</a>
 </div></section>
 

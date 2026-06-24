@@ -35,6 +35,16 @@
   .note{display:flex;align-items:center;gap:12px;margin-top:34px;color:var(--muted);font-size:0.94rem}
   .note strong{color:var(--ox);font-weight:600}
   section{padding:88px 0}
+  .promise{background:var(--ox);color:var(--paper);text-align:center}
+  .promise h2{font-size:clamp(2rem,6vw,3rem);color:var(--paper);margin-bottom:18px}
+  .promise p{max-width:60ch;margin:0 auto 30px;color:#f1e8d9;font-size:1.1rem;line-height:1.7}
+  .promise .btn-light{background:var(--paper);color:var(--ox)}
+  .craft .intro{font-size:1.1rem;color:var(--ink);max-width:60ch;margin-bottom:42px;line-height:1.7}
+  .craft-list{border-top:1px solid var(--rule)}
+  .craft-item{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;padding:30px 4px;border-bottom:1px solid var(--rule)}
+  .craft-item .num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--ox);line-height:1}
+  .craft-item h3{font-size:1.45rem;color:var(--ink);margin-bottom:8px}
+  .craft-item p{color:var(--muted);font-size:1rem;line-height:1.7}
   .sec-head{margin-bottom:46px}
   .sec-head .eyebrow{margin-bottom:14px}
   .sec-head h2{font-size:clamp(2.2rem,6vw,3.2rem);color:var(--ink)}
@@ -71,14 +81,20 @@
 </style>
 </head>
 <body>
-<header><div class="wrap bar"><div class="logo">Marlowe <em>Barber</em></div><a class="call-btn" href="#book">Book</a></div></header>
+<header><div class="wrap bar"><div class="logo">MARLOWE</div><a class="call-btn" href="#book">Book</a></div></header>
 
 <section class="hero"><div class="wrap hero-inner">
-  <div class="eyebrow">By Appointment &middot; All Heads Welcome</div>
-  <h1>A barber&rsquo;s hands. <em>A better chair.</em></h1>
-  <p>Precision cuts, fades, and beard work in a chair that actually feels good to sit in. It&rsquo;s just me, by appointment, out of Rosewood Studio &mdash; and I take my time.</p>
+  <div class="eyebrow">By appointment &middot; Every hair type</div>
+  <h1>One chair.<br>All day, <em>just you.</em></h1>
+  <p>I&rsquo;m Marlowe &mdash; I left the busy shop floor to do this properly: one client at a time, by appointment, out of Rosewood Studio. Every hair type, every texture, never rushed. You book a slot, you get my whole attention, and you leave with exactly what you asked for.</p>
   <div class="cta-row"><a class="btn btn-primary" href="#book">Book an appointment</a><a class="btn btn-ghost" href="#services">See services</a></div>
   <div class="note"><strong>Just me.</strong> No rotation, no rush, no being passed off.</div>
+</div></section>
+
+<section class="promise"><div class="wrap">
+  <h2>Exactly what you asked for.</h2>
+  <p>Show me a photo or just tell me what you&rsquo;re after, then I take the time to actually get there. Curly, coily, fine, thick, growing it out or starting over &mdash; it&rsquo;s the kind of work a rushed chair can&rsquo;t do. Here, it&rsquo;s just us, and the clock&rsquo;s off.</p>
+  <a class="btn btn-light" href="#book">Book your slot</a>
 </div></section>
 
 <section id="services" class="services"><div class="wrap">
@@ -102,9 +118,21 @@
     <div class="lbl">No waiting room rush</div>
   </div>
   <div class="about-copy">
-    <h2>Take a seat. <em>Take your time.</em></h2>
-    <p>It&rsquo;s just me, by appointment, out of Rosewood Studio &mdash; because the cut deserves it. You book a time, you get the whole hour, and you leave with exactly what you asked for &mdash; not what the line allowed.</p>
-    <p>Everybody&rsquo;s welcome in my chair. The fade&rsquo;s the same whether it&rsquo;s your first or your fiftieth.</p>
+    <div class="eyebrow" style="margin-bottom:14px">The barber</div>
+    <h2>I left the rush <em>on purpose.</em></h2>
+    <p>I&rsquo;m Marlowe. I spent years in a four-chair shop being told to turn the seat faster, and I couldn&rsquo;t do my best work that way. So now it&rsquo;s just me, by appointment, out of Rosewood Studio. You get the whole hour and my full attention &mdash; no rotation, no being passed off, no &ldquo;close enough.&rdquo;</p>
+    <p>Everyone&rsquo;s welcome in my chair, and every head of hair gets the same care, whether it&rsquo;s your first visit or your fiftieth.</p>
+  </div>
+</div></section>
+
+<section id="craft" class="craft"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">How I work</div><h2>What the whole hour <em>buys</em></h2></div>
+  <p class="intro">Most chairs are built for speed. Mine&rsquo;s built for getting it exactly right &mdash; whatever&rsquo;s on your head.</p>
+  <div class="craft-list">
+    <div class="craft-item"><div class="num">01</div><div><h3>Every texture</h3><p>Curly, coily, wavy, fine, thick &mdash; I cut to how your hair actually behaves, not one default method. If other shops have left you with a cut that &ldquo;doesn&rsquo;t sit right,&rdquo; this is usually why.</p></div></div>
+    <div class="craft-item"><div class="num">02</div><div><h3>A real consultation</h3><p>Before anything, we figure out what you actually want &mdash; photos welcome &mdash; and what&rsquo;ll work with your hair and how it grows. No guessing, no surprises in the mirror.</p></div></div>
+    <div class="craft-item"><div class="num">03</div><div><h3>Time to do it right</h3><p>No one&rsquo;s waiting behind you, so I can take the cut slowly, check it from every angle, and fix the millimeter that&rsquo;s bugging me. That&rsquo;s the difference you feel a week later.</p></div></div>
+    <div class="craft-item"><div class="num">04</div><div><h3>The cut, not a compromise</h3><p>You leave with exactly what we agreed on &mdash; not whatever the line had time for. If it&rsquo;s not right, we keep going. The hour is yours.</p></div></div>
   </div>
 </div></section>
 

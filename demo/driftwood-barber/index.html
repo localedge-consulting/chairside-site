@@ -99,6 +99,19 @@
   .final h2 .amber{color:var(--amber)}
   .final p{color:var(--muted);font-weight:400;margin-bottom:34px}
 
+  .promise{background:var(--amber);text-align:center;padding:74px 0}
+  .promise h2{font-size:clamp(2rem,6vw,2.9rem);color:var(--panel);margin-bottom:18px}
+  .promise p{color:rgba(251,249,243,0.9);font-weight:400;max-width:54ch;margin:0 auto 30px;font-size:1.08rem;line-height:1.65}
+  .promise .btn-light{background:var(--panel);color:var(--paper)}
+  .promise .btn-light:hover{background:#fff}
+
+  .craft .intro{color:var(--muted);font-weight:400;max-width:60ch;margin:-26px 0 42px;font-size:1.06rem;line-height:1.7}
+  .craft-list{border-top:1px solid var(--rule)}
+  .craft-item{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;padding:30px 4px;border-bottom:1px solid var(--rule)}
+  .craft-item .num{font-family:'Oswald',sans-serif;font-weight:700;font-size:2rem;line-height:1;color:var(--amber);letter-spacing:0.02em}
+  .craft-item h3{font-size:1.4rem;color:var(--paper);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.01em}
+  .craft-item p{color:var(--muted);font-weight:400;line-height:1.7;font-size:1.02rem}
+
   footer{background:var(--bg-soft);color:var(--muted);padding:34px 0;text-align:center;font-size:0.84rem;font-weight:400;border-top:1px solid var(--rule)}
   .demo-tag{display:inline-block;margin-top:14px;font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--panel);background:var(--amber);padding:5px 12px;border-radius:2px}
 
@@ -113,21 +126,29 @@
 
 <header>
   <div class="wrap bar">
-    <div class="logo">Driftwood <em>Barber</em></div>
+    <div class="logo">Drift<em>wood</em></div>
     <a class="call-btn" href="#book">Book</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap hero-inner">
-    <div class="eyebrow">Harbor Street &middot; Old-School Cuts</div>
-    <h1>Sharp cuts.<br><span class="amber">Salt air.</span></h1>
-    <p>The chair you actually look forward to. Classic cuts, beard work, and a hot-towel shave that takes exactly as long as it should &mdash; right on Harbor Street.</p>
+    <div class="eyebrow">Old-school cuts &middot; Harbor Bay</div>
+    <h1>No trends.<br><span class="amber">Just a good cut.</span></h1>
+    <p>I&rsquo;m Driftwood &mdash; I cut the way my mentor taught me, out of Harbor Barbershop in Harbor Bay. Classic cuts, beard work, and a straight-razor neck shave, done slow and done right. No app maze, no upsell &mdash; just a barber who gets it right and remembers your name.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#book">Book a chair</a>
       <a class="btn btn-ghost" href="#services">See the menu</a>
     </div>
     <div class="pole"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 &middot; loved by the regulars</div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="wrap">
+    <h2>First time? I&rsquo;ve got you.</h2>
+    <p>Not sure what to ask for? Tell me about your last good haircut &mdash; or your worst &mdash; and I&rsquo;ll take it from there. A good cut shouldn&rsquo;t be complicated, and you shouldn&rsquo;t have to be a hair expert to get one.</p>
+    <a class="btn btn-light" href="#book">Grab a chair</a>
   </div>
 </section>
 
@@ -158,10 +179,50 @@
       <div class="lbl">One chair &mdash; no rotation, no rush</div>
     </div>
     <div class="about-copy">
-      <h2>Just me. <span class="amber">One chair.</span> No app maze.</h2>
-      <p>I&rsquo;ve been cutting hair on Harbor Street for fourteen years. I cut out of Harbor Barbershop, in Driftwood Bay &mdash; the kind of place where the same hands have been on the same heads long enough to know the cowlick before you sit down.</p>
-      <p>Walk in for a lineup, settle in for a shave. Either way you get a barber who remembers your name and the kid&rsquo;s soccer schedule.</p>
+      <div class="eyebrow" style="margin-bottom:16px">The barber</div>
+      <h2>Just me. <span class="amber">One chair.</span> No fuss.</h2>
+      <p>I&rsquo;m Driftwood &mdash; fourteen years behind the chair, out of Harbor Barbershop. I learned from an old-timer who did three things perfectly and never chased a trend, and that&rsquo;s how I cut: a clean classic, a proper beard, a straight-razor finish. I&rsquo;d rather do a handful of things right than a hundred things okay. Sit down, take a breath &mdash; this is the slow chair.</p>
       <div class="quote">&ldquo;Best cut on the coast. The shave alone is worth the drive.&rdquo;<span class="who">&mdash; A Driftwood regular</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="craft" class="craft">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The way I work</div>
+      <h2>A few things, <span class="amber">done right</span></h2>
+    </div>
+    <p class="intro">I don&rsquo;t do every trend that comes through the door. I do the classics &mdash; and I do them better because that&rsquo;s all I do.</p>
+    <div class="craft-list">
+      <div class="craft-item">
+        <div class="num">01</div>
+        <div>
+          <h3>The classics, actually classic</h3>
+          <p>A side part, a crop, a clean taper &mdash; cut the traditional way, with the scissors doing the work, not a guard and a prayer. The cuts that looked good on your grandfather and still do.</p>
+        </div>
+      </div>
+      <div class="craft-item">
+        <div class="num">02</div>
+        <div>
+          <h3>The straight-razor finish</h3>
+          <p>Every cut ends with a hot towel and a straight razor on the neck and edges. It&rsquo;s the detail that makes a fresh cut feel fresh &mdash; and almost nobody takes the time anymore.</p>
+        </div>
+      </div>
+      <div class="craft-item">
+        <div class="num">03</div>
+        <div>
+          <h3>Cut to last</h3>
+          <p>I cut for how it&rsquo;ll look in three weeks, not just today. A good classic grows out gracefully &mdash; you&rsquo;re not chained to the chair.</p>
+        </div>
+      </div>
+      <div class="craft-item">
+        <div class="num">04</div>
+        <div>
+          <h3>No rush, no upsell</h3>
+          <p>One chair, one person at a time. I&rsquo;m not turning the seat or talking you into product you don&rsquo;t need. You get a good cut and a few minutes that aren&rsquo;t about your phone.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
