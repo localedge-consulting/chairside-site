@@ -68,6 +68,10 @@
   <div class="reelhead">② Then the Reel — your reach play</div>
   <div class="sub">Post last, once the grid's full</div>
   <div id="reel"></div>
+
+  <div class="reelhead" style="margin-top:40px">🧪 Reel — Variant B to test</div>
+  <div class="sub">No cartoon — leads with the sleek demo. Post as a second reel and compare reach.</div>
+  <div id="reel2"></div>
 </div>
 
 <script>
@@ -90,6 +94,9 @@ const GRID = [
 const REEL = {video:'reel-shock.mp4', type:'Reel',
   cap:`Your cuts are professional. Does your online presence say so? 💈\nOn Instagram every barber looks the same — your website is where a stranger decides you're the real deal. Built from one conversation, not a template.\n\nDM me. 👇 chairsidebarbersites.com\n\n#barber #barberlife #barbergram #fade`,
   note:`<b>Post as a Reel</b> (not a normal post). Add a <b>trending audio</b> (tap the music note — this drives the reach more than the caption). The hook is already built into the opening (the cartoon + question), so you don't need a text overlay on the first frame.`};
+const REEL2 = {video:'reel-onyx-lead.mp4', cover:'cover-onyx-lead.png', type:'Reel',
+  cap:`Your work is this sharp. Your website should be too. 💈\nThis is a real barber's website — built from one conversation, not a template. Yours could look like this.\n\nDM me to build yours. 👇 chairsidebarbersites.com\n\n#barber #barberlife #barbergram #fade`,
+  note:`<b>Test variant — no cartoon, leads with the sleek demo.</b> Post it as a Reel and add a <b>trending audio</b>. After picking the video, tap <b>Cover → Add from camera roll</b> and choose the cover image below (download it first). Give it a few days, then compare its reach against the first reel.`};
 
 function copyBtn(cap){
   const b=document.createElement('button');b.className='copy';b.textContent='Copy caption';
@@ -109,6 +116,11 @@ function render(p,n,container){
     const v=document.createElement('video');v.src=B+p.video;v.controls=true;v.playsInline=true;el.appendChild(v);
     const a=document.createElement('a');a.className='dlbtn';a.href=B+p.video;a.setAttribute('download','chairside-reel.mp4');a.textContent='⬇ Download reel';el.appendChild(a);
     const dh=document.createElement('div');dh.className='dlhint';dh.innerHTML='<b>iPhone:</b> tap → it saves to your <b>Files</b> app → open Files, tap the video, then <b>Share → Save Video</b> to put it in your camera roll. <b>Android:</b> it downloads straight to your gallery.';el.appendChild(dh);
+    if(p.cover){
+      const cl=document.createElement('div');cl.className='caplabel';cl.style.marginTop='18px';cl.textContent='Cover image — set as the reel cover';el.appendChild(cl);
+      const ci=document.createElement('img');ci.className='pimg';ci.src=B+p.cover;ci.loading='lazy';el.appendChild(ci);
+      const ca=document.createElement('a');ca.className='dlbtn';ca.href=B+p.cover;ca.setAttribute('download','chairside-cover.png');ca.textContent='⬇ Download cover';el.appendChild(ca);
+    }
   } else {
     const im=document.createElement('img');im.className='pimg';im.src=B+p.img;im.loading='lazy';el.appendChild(im);
   }
@@ -122,6 +134,7 @@ function render(p,n,container){
 }
 GRID.forEach((p,i)=>render(p,i+1,document.getElementById('grid')));
 render(REEL,GRID.length+1,document.getElementById('reel'));
+render(REEL2,'B',document.getElementById('reel2'));
 </script>
 </body>
 </html>
