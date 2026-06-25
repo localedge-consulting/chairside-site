@@ -37,6 +37,9 @@
   .copy.done{background:#5a8a5a}
   .note{margin-top:12px;font-size:0.85rem;color:var(--muted);border-left:2px solid var(--sand);padding-left:12px}
   .note b{color:var(--paper)}
+  .dlbtn{display:inline-flex;align-items:center;gap:9px;margin-top:12px;font-family:'Oswald';font-size:0.95rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--bg);background:var(--bright);border-radius:7px;padding:14px 24px;text-decoration:none}
+  .dlhint{margin-top:10px;font-size:0.82rem;color:var(--muted);line-height:1.5}
+  .dlhint b{color:var(--paper)}
   .seedhead,.reelhead{font-family:'Oswald';font-size:0.82rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--sand);margin:30px 0 6px;text-align:center}
   .reelhead{color:var(--bright)}
   .sub{text-align:center;color:var(--muted);font-size:0.86rem;margin-bottom:4px}
@@ -104,7 +107,8 @@ function render(p,n,container){
     el.appendChild(g);
   } else if(p.video){
     const v=document.createElement('video');v.src=B+p.video;v.controls=true;v.playsInline=true;el.appendChild(v);
-    const a=document.createElement('a');a.className='save';a.href=B+p.video;a.target='_blank';a.textContent='Open the video to save it →';el.appendChild(a);
+    const a=document.createElement('a');a.className='dlbtn';a.href=B+p.video;a.setAttribute('download','chairside-reel.mp4');a.textContent='⬇ Download reel';el.appendChild(a);
+    const dh=document.createElement('div');dh.className='dlhint';dh.innerHTML='<b>iPhone:</b> tap → it saves to your <b>Files</b> app → open Files, tap the video, then <b>Share → Save Video</b> to put it in your camera roll. <b>Android:</b> it downloads straight to your gallery.';el.appendChild(dh);
   } else {
     const im=document.createElement('img');im.className='pimg';im.src=B+p.img;im.loading='lazy';el.appendChild(im);
   }
