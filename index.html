@@ -85,6 +85,13 @@
   .grid2{display:grid;grid-template-columns:1fr;gap:28px;margin-top:40px}
   .feat h3{font-family:'Oswald',sans-serif;font-size:1.15rem;color:var(--amber);font-weight:600;letter-spacing:0.01em}
   .feat p{margin-top:6px;color:var(--muted);font-size:0.98rem;line-height:1.6}
+  .stats{display:grid;grid-template-columns:1fr;gap:14px;margin-top:40px}
+  .stat{background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:24px 22px}
+  .stat .num{font-family:'Oswald',sans-serif;font-weight:700;font-size:2.7rem;color:var(--amber);line-height:1;letter-spacing:-0.01em}
+  .stat .num .vs{font-size:1.25rem;color:var(--muted);font-weight:600;letter-spacing:0}
+  .stat p{margin-top:12px;color:var(--paper);font-size:0.98rem;line-height:1.5;opacity:0.92}
+  .stat p strong{color:var(--amber-bright)}
+  .stat .src{margin-top:14px;font-size:0.7rem;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
 
   .demos{display:grid;grid-template-columns:1fr;gap:14px;margin-top:40px}
   .demo{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--amber);border-radius:3px;padding:20px 22px;text-decoration:none;transition:.2s}
@@ -127,6 +134,7 @@
 
   @media(min-width:780px){
     .grid2{grid-template-columns:1fr 1fr;gap:36px 44px}
+    .stats{grid-template-columns:1fr 1fr}
     .demos{grid-template-columns:1fr 1fr}
     .paths{grid-template-columns:1fr 1fr}
     .foot{flex-direction:row;align-items:center;justify-content:space-between}
@@ -163,6 +171,20 @@
     </div>
     <div>
       <p class="lead">And the part nobody mentions: <strong>AI tools can&rsquo;t read your Instagram.</strong> When someone asks ChatGPT or Google&rsquo;s AI for &ldquo;a good barber near me,&rdquo; your IG is invisible to it. A real website is the one thing those tools can actually see and recommend.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-k">The case for it</div>
+    <h2>You don&rsquo;t have to take my <span class="a">word for it.</span></h2>
+    <p class="lead">Here&rsquo;s what the research says about a real website &mdash; vs. social media alone.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">$177<span class="vs">&nbsp;vs $36</span></div><p>What people are comfortable spending through a business&rsquo;s <strong>website</strong> &mdash; vs. through Instagram or TikTok.</p><div class="src">DreamHost 2026 Local Business Trust Index</div></div>
+      <div class="stat"><div class="num">84%</div><p>of people find a business with a <strong>website</strong> more credible than one with only social media.</p><div class="src">BusinessDasher</div></div>
+      <div class="stat"><div class="num">41%</div><p>more <strong>trustworthy</strong> &mdash; how much more a business with a website is trusted than one without.</p><div class="src">DreamHost 2026 Local Business Trust Index</div></div>
+      <div class="stat"><div class="num">77%</div><p>of <strong>barbershop appointments</strong> are now booked online.</p><div class="src">Mangomint booking data</div></div>
     </div>
   </div>
 </section>
