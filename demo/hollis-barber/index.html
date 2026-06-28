@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Hollis — Barber · Sample Site by Chairside</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Hollis — REVIEWS-LED flavor. Social proof is the architecture: a
+     rating-forward hero, a stat band, a wall of (sample) reviews, a featured
+     pull-quote, and a themed-praise "proof" block in place of a gallery.
+     Warm off-white + pine green + star-gold = a "trusted local" register,
+     distinct from the photography-forward premium demos.
+     NOTE: all reviews are SAMPLE content for a fictional barber. A real build
+     pulls the barber's actual Google / Booksy / Fresha reviews. */
+  :root{--paper:#f6f4ee;--paper-2:#efece2;--card:#fffdf7;--ink:#1c211d;--green:#1f4d3a;--green-2:#2f6b4f;--gold:#cf9b32;--muted:#6e756c;--rule:#e1ddcf}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-0.01em}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .stars{color:var(--gold);letter-spacing:0.08em;font-size:1rem;line-height:1}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(246,244,238,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.55rem;letter-spacing:0.01em;color:var(--green)}
+  .bar-rating{margin-left:auto;margin-right:18px;display:flex;align-items:center;gap:8px;font-size:0.84rem;color:var(--muted);font-weight:500}
+  .bar-rating b{color:var(--ink)}
+  .call-btn{font-family:'Inter',sans-serif;font-weight:600;font-size:0.92rem;color:var(--paper);background:var(--green);text-decoration:none;padding:10px 22px;border-radius:6px}
+  /* hero */
+  .hero{padding:72px 0 80px;text-align:center;background:radial-gradient(120% 90% at 50% -10%,rgba(31,77,58,0.07),transparent 60%)}
+  .eyebrow{font-family:'Inter',sans-serif;font-size:0.74rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--green-2);margin-bottom:26px;font-weight:600}
+  .hero .bigstars{font-size:2.1rem;letter-spacing:0.12em;color:var(--gold);line-height:1}
+  .hero .rate-line{margin-top:14px;font-size:1rem;color:var(--muted);font-weight:500}
+  .hero .rate-line b{color:var(--ink);font-weight:700}
+  .hero h1{font-size:clamp(2.8rem,9vw,5.4rem);color:var(--green);margin:22px auto 0;max-width:14ch}
+  .hero p{margin:24px auto 32px;font-size:1.12rem;max-width:48ch;color:var(--ink);opacity:0.86}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .btn{font-family:'Inter',sans-serif;font-weight:600;font-size:0.98rem;text-decoration:none;padding:14px 30px;border-radius:7px;display:inline-block}
+  .btn-primary{background:var(--green);color:var(--paper)}
+  .btn-ghost{border:1px solid var(--green);color:var(--green)}
+  /* stat band */
+  .stats{background:var(--green);color:var(--paper)}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .stat{padding:30px 18px;text-align:center;border-right:1px solid rgba(255,255,255,0.12);border-bottom:1px solid rgba(255,255,255,0.12)}
+  .stat .n{font-family:'Fraunces',serif;font-weight:700;font-size:2.4rem;line-height:1;color:#fff}
+  .stat .n .s{color:var(--gold)}
+  .stat .l{font-size:0.82rem;letter-spacing:0.02em;color:rgba(246,244,238,0.8);margin-top:8px}
+  .stat-note{text-align:center;font-size:0.74rem;color:rgba(246,244,238,0.62);padding:14px 22px 22px}
+  /* section scaffolding */
+  section{padding:84px 0}
+  .sec-head{text-align:center;max-width:40ch;margin:0 auto 44px}
+  .sec-head .eyebrow{margin-bottom:14px}
+  .sec-head h2{font-size:clamp(2.1rem,6vw,3.2rem);color:var(--green)}
+  .sec-head p{color:var(--muted);margin-top:12px;font-size:1rem}
+  /* review wall */
+  .wall{columns:1;column-gap:18px}
+  .rev{break-inside:avoid;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:22px 22px 20px;margin-bottom:18px;box-shadow:0 1px 2px rgba(28,33,29,0.04)}
+  .rev .stars{margin-bottom:12px}
+  .rev p{font-size:1.02rem;color:var(--ink);line-height:1.55}
+  .rev .by{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:0.84rem}
+  .rev .av{width:32px;height:32px;border-radius:50%;background:var(--green-2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.82rem;flex-shrink:0}
+  .rev .nm{font-weight:600;color:var(--ink)}
+  .rev .src{color:var(--muted)}
+  .wall-note{text-align:center;font-size:0.82rem;color:var(--muted);max-width:54ch;margin:8px auto 0;line-height:1.5}
+  /* featured pull quote */
+  .featured{background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .feat-inner{max-width:760px;margin:0 auto;text-align:center}
+  .feat-inner .stars{font-size:1.3rem;margin-bottom:22px}
+  .feat-inner blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(1.4rem,3.8vw,2rem);line-height:1.4;color:var(--green)}
+  .feat-inner .cite{margin-top:24px;font-size:0.92rem;color:var(--muted);font-weight:500}
+  .feat-inner .cite b{color:var(--ink)}
+  /* themed praise (proof block) */
+  .themes .t-grid{display:grid;grid-template-columns:1fr;gap:18px}
+  .theme{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:28px 24px}
+  .theme .cnt{display:inline-flex;align-items:center;gap:7px;font-size:0.74rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--green-2);font-weight:600;margin-bottom:14px}
+  .theme .cnt .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .theme h3{font-family:'Fraunces',serif;font-size:1.45rem;color:var(--green);margin-bottom:10px}
+  .theme p{color:var(--muted);font-size:0.98rem;line-height:1.6}
+  .theme p .q{color:var(--ink);font-style:italic}
+  /* services */
+  .services{background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:0}
+  .svc{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:18px 2px;border-bottom:1px solid var(--rule)}
+  .svc:last-child{border-bottom:none}
+  .svc .n{font-weight:600;font-size:1.05rem;color:var(--ink)}
+  .svc .d{font-size:0.85rem;color:var(--muted)}
+  .svc .p{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--green);white-space:nowrap}
+  /* about */
+  .about{max-width:680px;margin:0 auto;text-align:center}
+  .about h2{font-size:clamp(2rem,6vw,3rem);color:var(--green);margin-bottom:18px}
+  .about p{color:var(--ink);opacity:0.85;font-size:1.06rem;line-height:1.75}
+  /* visit */
+  .visit{background:var(--green);color:var(--paper)}
+  .visit .sec-head h2{color:#fff}
+  .visit .sec-head .eyebrow{color:var(--gold)}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:20px;max-width:820px;margin:0 auto}
+  .info-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);border-radius:12px;padding:28px}
+  .info-card h3{font-family:'Fraunces',serif;font-size:1.4rem;color:#fff;margin-bottom:16px}
+  .info-row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;font-size:0.94rem;border-bottom:1px solid rgba(255,255,255,0.12)}
+  .info-row:last-child{border-bottom:none}
+  .info-row span:first-child{color:rgba(246,244,238,0.7)}
+  .info-row span:last-child{color:#fff;font-weight:500;text-align:right}
+  .info-card .btn-primary{background:var(--gold);color:#241c05}
+  /* final */
+  .final{text-align:center}
+  .final .stars{font-size:1.3rem;margin-bottom:18px}
+  .final h2{font-size:clamp(2.4rem,7vw,4rem);color:var(--green);margin-bottom:14px;max-width:16ch;margin-left:auto;margin-right:auto}
+  .final p{color:var(--muted);margin-bottom:28px}
+  footer{background:var(--ink);color:rgba(246,244,238,0.6);padding:34px 0;text-align:center;font-size:0.84rem}
+  .tag-line{color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;font-size:0.74rem;margin-bottom:8px}
+  .demo-tag{display:inline-block;margin-top:14px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.06em;color:var(--ink);background:var(--gold);padding:5px 14px;border-radius:5px}
+  @media(min-width:760px){
+    .stat-grid{grid-template-columns:repeat(4,1fr)}
+    .stat{border-bottom:none}
+    .wall{columns:3}
+    .themes .t-grid{grid-template-columns:repeat(3,1fr)}
+    .svc-grid{grid-template-columns:1fr 1fr;column-gap:54px}
+    .visit-grid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header><div class="wrap bar">
+  <div class="logo">Hollis</div>
+  <div class="bar-rating"><span class="stars">★★★★★</span><span><b>4.9</b> · 300+ reviews</span></div>
+  <a class="call-btn" href="#book">Book</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="eyebrow">Word-of-mouth barber · Maplewood</div>
+  <div class="bigstars">★★★★★</div>
+  <div class="rate-line"><b>4.9</b> average · <b>300+</b> reviews · most-recommended chair in Maplewood</div>
+  <h1>Don&rsquo;t take my word for it.</h1>
+  <p>I&rsquo;m Hollis. I&rsquo;ve built my chair on one thing &mdash; people telling their friends. So before you book, read what they say. Then come find out for yourself.</p>
+  <div class="cta-row"><a class="btn btn-primary" href="#book">Book a chair</a><a class="btn btn-ghost" href="#reviews">Read the reviews</a></div>
+</div></section>
+
+<section class="stats" style="padding:0"><div class="wrap" style="padding:0">
+  <div class="stat-grid">
+    <div class="stat"><div class="n">4.9<span class="s">★</span></div><div class="l">average rating</div></div>
+    <div class="stat"><div class="n">300+</div><div class="l">reviews &amp; counting</div></div>
+    <div class="stat"><div class="n">9 <span class="s">in</span> 10</div><div class="l">clients rebook</div></div>
+    <div class="stat"><div class="n">#1</div><div class="l">most-reviewed in Maplewood</div></div>
+  </div>
+  <div class="stat-note">Sample figures, shown to demonstrate the layout.</div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">What clients say</div><h2>The reviews do the talking.</h2><p>Real bookings start with trust. This is where a stranger decides you&rsquo;re worth the chair.</p></div>
+  <div class="wall">
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;Best fade I&rsquo;ve had in this city, full stop. Hollis takes his time and it shows.&rdquo;</p><div class="by"><span class="av">M</span><span><span class="nm">Marcus T.</span> <span class="src">· via Google</span></span></div></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;I&rsquo;ve been to a lot of barbers. None of them remember how I like it. Hollis does, every single time.&rdquo;</p><div class="by"><span class="av">D</span><span><span class="nm">Devin R.</span> <span class="src">· via Google</span></span></div></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;Booked on a whim off a friend&rsquo;s recommendation. Now I won&rsquo;t go anywhere else.&rdquo;</p><div class="by"><span class="av">T</span><span><span class="nm">Tony A.</span> <span class="src">· via Booksy</span></span></div></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;Brought my son in nervous and he walked out grinning. So patient with kids.&rdquo;</p><div class="by"><span class="av">R</span><span><span class="nm">Renee M.</span> <span class="src">· via Google</span></span></div></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;On time, every time. I&rsquo;m in and out on my lunch break looking sharp.&rdquo;</p><div class="by"><span class="av">W</span><span><span class="nm">Will K.</span> <span class="src">· via Google</span></span></div></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;The lineup is unreal. Three people at work asked who does my hair.&rdquo;</p><div class="by"><span class="av">J</span><span><span class="nm">Jordan P.</span> <span class="src">· via Booksy</span></span></div></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;Moved across town and still drive thirty minutes for this chair. Worth it.&rdquo;</p><div class="by"><span class="av">S</span><span><span class="nm">Sam D.</span> <span class="src">· via Google</span></span></div></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;First barber who actually listened to what I wanted instead of doing his own thing.&rdquo;</p><div class="by"><span class="av">A</span><span><span class="nm">Andre L.</span> <span class="src">· via Google</span></span></div></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>&ldquo;Clean shop, good conversation, even better cut. My whole crew comes here now.&rdquo;</p><div class="by"><span class="av">C</span><span><span class="nm">Chris V.</span> <span class="src">· via Booksy</span></span></div></div>
+  </div>
+  <p class="wall-note">Sample reviews, shown to demonstrate the layout. A real build pulls in <strong>your</strong> actual Google, Booksy, or Fresha reviews &mdash; and keeps them fresh automatically.</p>
+</div></section>
+
+<section class="featured"><div class="wrap feat-inner">
+  <div class="stars">★★★★★</div>
+  <blockquote>&ldquo;I had the same barber my whole life until he retired, and I figured no one could replace him. Hollis proved me wrong in one visit &mdash; asked the right questions, didn&rsquo;t rush, gave me the cleanest cut I&rsquo;ve had in years. I&rsquo;ve already sent three friends his way.&rdquo;</blockquote>
+  <div class="cite">&mdash; <b>Marcus T.</b>, regular since 2024</div>
+</div></section>
+
+<section class="themes"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">The pattern</div><h2>What people keep saying.</h2><p>Three hundred reviews, and the same words come up again and again.</p></div>
+  <div class="t-grid">
+    <div class="theme"><div class="cnt"><span class="dot"></span>in 120+ reviews</div><h3>The blend</h3><p>&ldquo;<span class="q">cleanest fade in town</span>&rdquo; &mdash; the work speaks first, and clients notice the detail other chairs skip.</p></div>
+    <div class="theme"><div class="cnt"><span class="dot"></span>in 90+ reviews</div><h3>On time</h3><p>&ldquo;<span class="q">in and out, never rushed</span>&rdquo; &mdash; appointments run on schedule, so your day doesn&rsquo;t get held hostage.</p></div>
+    <div class="theme"><div class="cnt"><span class="dot"></span>in 80+ reviews</div><h3>The chair</h3><p>&ldquo;<span class="q">feels like family</span>&rdquo; &mdash; the kind of room you bring your kid to, and the reason people keep coming back.</p></div>
+  </div>
+</div></section>
+
+<section id="services" class="services"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">The menu</div><h2>Simple and honest.</h2></div>
+  <div class="svc-grid">
+    <div class="svc"><div><div class="n">Haircut</div><div class="d">Scissor or clipper, your call.</div></div><div class="p">$40</div></div>
+    <div class="svc"><div><div class="n">Cut &amp; Beard</div><div class="d">Shaped and lined sharp.</div></div><div class="p">$55</div></div>
+    <div class="svc"><div><div class="n">Skin Fade</div><div class="d">Bald, taper, or drop.</div></div><div class="p">$45</div></div>
+    <div class="svc"><div><div class="n">Lineup</div><div class="d">Edge-up between cuts.</div></div><div class="p">$22</div></div>
+    <div class="svc"><div><div class="n">Kids (under 12)</div><div class="d">Patient, no rush.</div></div><div class="p">$30</div></div>
+    <div class="svc"><div><div class="n">Hot Towel Shave</div><div class="d">The full ritual.</div></div><div class="p">$38</div></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <div class="eyebrow" style="margin-bottom:14px">The barber</div>
+  <h2>Why the chair stays full.</h2>
+  <p>I&rsquo;m Hollis &mdash; I cut out of Maplewood Barbershop. I never spent a dime on advertising. Every client in my book came from someone who sat in this chair, liked what they saw in the mirror, and told a friend. That&rsquo;s the whole business. Do the cut right, treat people right, and they bring you the next one.</p>
+</div></section>
+
+<section id="book" class="visit"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">Plan your visit</div><h2>Where to find me</h2></div>
+  <div class="visit-grid">
+    <div class="info-card"><h3>My chair</h3>
+      <div class="info-row"><span>Shop</span><span>Maplewood Barbershop</span></div>
+      <div class="info-row"><span>Address</span><span>210 Maple Ave</span></div>
+      <div class="info-row"><span>Tag me</span><span>@holliscuts</span></div>
+      <div style="margin-top:22px"><a class="btn btn-primary" style="width:100%;text-align:center;display:flex;align-items:center;justify-content:center" href="#book">Book a chair</a></div>
+    </div>
+    <div class="info-card"><h3>My hours</h3>
+      <div class="info-row"><span>Tue &ndash; Fri</span><span>9am &ndash; 7pm</span></div>
+      <div class="info-row"><span>Saturday</span><span>8am &ndash; 5pm</span></div>
+      <div class="info-row"><span>Sun &ndash; Mon</span><span>Closed</span></div>
+      <div class="info-row"><span>Walk-ins</span><span>Book ahead &mdash; I fill up</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <div class="stars">★★★★★</div>
+  <h2>Book the chair everyone&rsquo;s talking about.</h2>
+  <p>4.9 stars, 300+ reviews, and one open seat with your name on it.</p>
+  <a class="btn btn-primary" href="#book">Book a chair</a>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="tag-line">Hollis &middot; Maplewood Barbershop</div>
+  <span class="demo-tag">Sample site &middot; built by Chairside</span>
+</div></footer>
+</body>
+</html>
